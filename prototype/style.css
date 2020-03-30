@@ -1,0 +1,21 @@
+
+ 
+ body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Helvetica;
+}
+
+.header {
+  text-align: center;
+  color: goldenrod;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: goldenrod;
+}
+
+.content {
+  padding: 16px;
+}
