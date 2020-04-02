@@ -2,7 +2,7 @@ function adminMenu() {
   document.getElementById("navbar").innerHTML = "";
   for (element of model.menuOptions)
     if (element.onlyForAdmin == true) {
-      console.log(" er admin, yay");
+  
       document.getElementById("navbar").innerHTML += ` <button 
           onclick="${element.functionName}()"> ${element.txt}
          </button>`;
@@ -11,7 +11,7 @@ function adminMenu() {
 
 function calender() {
   document.getElementById("content").innerHTML = "";
-  showMonth();
+  showMonthAdmin();
 }
 
 function adminMainPage() {
@@ -19,7 +19,7 @@ function adminMainPage() {
   document.getElementById("content").innerHTML = "";
 
   model.logInSession = "Admin";
-  console.log(model.logInSession, " fra modell");
+ 
   //tegne ut alle buttons som har admin=true
 }
 

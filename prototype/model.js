@@ -97,7 +97,7 @@ const model = {
       id: 4,
       name: "Yin & Yang",
       info: "pusteyoga",
-      date: '2020-06-20',
+      date: '25.3.2020',
       price: 1500,
       maxParticipants: 15,
       currentParticipants: 5,

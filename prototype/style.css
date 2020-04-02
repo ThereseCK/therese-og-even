@@ -2,7 +2,6 @@
  
  body {
   margin: 0;
-  
   font-size: 15px;
   font-family: Helvetica;
   text-align: center ;
@@ -32,6 +31,8 @@
  display: flex;
   float: left;
   text-align: center;
+  
+  
 }
 
 .weekday {
@@ -47,8 +48,14 @@ input {
   margin-bottom: 15px;
   text-align: center;
 }
+.addButton {
+  border-radius: 50%;
+  background-color: aquamarine;
+  width: 20px;
+  height: 20px;
 
-/* .weekdayName {
-  display: flex;
   
-} */
+  
+}
+
+

@@ -22,12 +22,7 @@ function showInfo() {
   if (selectedCategory) {
     const catName = categories.map(b => b.name).join(" ");
     const info = categories.map(n => n.info).join(" ");
-    console.log(catName, " <-- cat ", info, " <-- info");
 
-    console.log(
-      model.categories[model.selectedCategoryId - 1].info,
-      " infor til påtrykket underKat"
-    );
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
       : (test = model.categories[model.selectedCategoryId - 1].info);
@@ -77,7 +72,6 @@ function selectCategory(id) {
 
 function initMenu() {
   for (element of model.menuOptions) {
-    console.log("løkka køyrer! ", element);
     if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
       document.getElementById("navbar").innerHTML += ` <button 
                              onclick="${element.functionName}()"> ${element.txt}
