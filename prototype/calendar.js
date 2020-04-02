@@ -1,44 +1,5 @@
-<!-- <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-    <style>
-        .week {
-            display: flex;
-            float: left;
-        }
-
-        .weekday {
-            border: 1px solid gray;
-            padding: 10px;
-            width: 100px;
-        }
-
-        .weekdayName {
-            margin-left: 150px;
-        }
-
-        /* .dayname{
-            border: 1px solid gray;
-            padding: 10px;
-            width: 300px;
-            float: left;
-        } */
-    </style>
-</head>
-
-<body>
-
-    <div id="calendar"></div>
-    <button onclick="switchWeek(-1)">&lt;&lt;</button>
-    <button onclick="switchWeek(+1)">&gt;&gt;</button>
-
-    <script>
-        var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
-        var calendarDiv = document.getElementById('calendar');
+var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
+        // var calendarDiv = document.getElementById('calendar');
         var currentMondayDate = getMondayOfCurrentWeek();
         var appointments = [
             { date: new Date(2020, 2, 29, 12), text: 'Mno' },
@@ -47,15 +8,11 @@
             { date: new Date(2020, 2, 2, 12), text: 'Ghi' },
             { date: new Date(2020, 2, 9, 12), text: 'Jkl' },
         ];
-
-
-
-
         showMonth();
 
         function showMonth() {
-            calendarDiv.innerHTML = "";
-            calendarDiv.innerHTML = `
+            document.getElementById('content').innerHTML = "";
+            document.getElementById('content').innerHTML = `
         
         ${weekdayNames.map(d => `
             <div class="weekday week">${d}</div>`).join(' ')}
@@ -65,7 +22,7 @@
             while (aMonday.getDate() >= 7) {
                 aMonday = addDays(aMonday, -7);
             }
-            calendarDiv.innerHTML += ` 
+            document.getElementById('content').innerHTML += ` 
             <div class="week">${createWeekHtml(aMonday)}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 7))}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 14))}</div>
@@ -84,12 +41,17 @@
                 var dayName = weekdayNames[date.getDay()];
                 var appointmentsToday = getAppointments(date);
                 html += ` 
-                    <div class="weekday">
+                    <div class="weekday" onclick="dayDate()">
                         <b> ${date.toLocaleDateString()}</b><br/>
-                        ${appointmentsToday.length} avtaler
+                         ${appointmentsToday.length} avtaler
                     </div>`;
             }
             return html;
+        }
+        function dayDate() {
+            document.getElementById('content').innerHTML = `  
+            Her kommer oversikt over dagen du har trykket på.
+            `;
         }
 
         function getAppointments(date) {
@@ -122,12 +84,3 @@
         function addDays(date, dayCount) {
             return new Date(date.getTime() + (dayCount * 24 * 60 * 60 * 1000));
         }
-
-        // function switchWeek(deltaWeek) {
-        //     currentMondayDate = addDays(currentMondayDate, deltaWeek * 7);
-        //     showWeek();
-        // }
-    </script>
-</body>
-
-</html> -->

@@ -2,9 +2,12 @@
  
  body {
   margin: 0;
-  font-size: 28px;
+  
+  font-size: 15px;
   font-family: Helvetica;
+  text-align: center ;
 }
+
 
 .header {
   text-align: center;
@@ -14,8 +17,38 @@
 #navbar {
   overflow: hidden;
   background-color: goldenrod;
+  margin-bottom: 15px;
 }
 
-.content {
+#content {
   padding: 16px;
+  text-align: center;
+  margin-left: 15px;
 }
+
+/* Kalender */
+
+.week {
+ display: flex;
+  float: left;
+  text-align: center;
+}
+
+.weekday {
+  
+  border: 1px solid gray;
+  padding: 10px;
+  width: 80px;
+  font-size: 15px;
+  text-align: center;
+}
+input {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* .weekdayName {
+  display: flex;
+  
+} */
