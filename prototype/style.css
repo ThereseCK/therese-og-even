@@ -4,22 +4,23 @@
   margin: 0;
   font-size: 15px;
   font-family: Helvetica;
+  color: darkslategray;
   
 }
 
 
 .header {
   text-align: center;
-  color: darkslategrey;
-  text-shadow: goldenrod 1px 1px;
-  font-weight: bold;
+ 
 }
 
 #navbar {
   overflow: hidden;
   /* background-color: palegoldenrod; */
   margin-bottom: 15px;
-
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
 
 }
 
@@ -66,6 +67,7 @@ input {
   text-shadow: grey 1px 1px;
   box-shadow:  grey 3px 3px 3px ;
   height: 26px;
+  font-size: 12px;
 }
 .infoButton {
   background-color: rgb(159, 185, 159); 
