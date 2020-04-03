@@ -29,4 +29,26 @@ ting som skal være med:
         samt se informasjon.
 
 
+        function getAppointments(date) {
+             var filteredList = [];
+            for (var i = 0; i < appointments.length; i++) {
+              var appointment = appointments[i];
+          if (appointment.date.getFullYear() == date.getFullYear()
+                  && appointment.date.getMonth() == date.getMonth()
+                  && appointment.date.getDate() == date.getDate()) {
+               filteredList.push(appointment);
+              }
+        }
+            return filteredList;
+          }
+  
+          function showDate(year, month, day) {
+            var date = new Date(year, month, day);
+             var appointmentsToday = getAppointments(date);
+              alert(JSON.stringify(appointmentsToday));
+          
+               //return JSON.stringify(appointmentsToday) // få ut en string
+          }
+
+
   

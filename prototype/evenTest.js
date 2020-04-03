@@ -16,7 +16,6 @@ ${weekdayNames.map(d => `
     <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 14))}</div>
     <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 21))}</div>
     <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 28))}</div>
-    <br>
     <div class="week addButton"> + </div>
     
     `;
@@ -32,7 +31,7 @@ function createWeekHtmlAdmin(monday) {
         var dayName = weekdayNames[date.getDay()];
         // var appointmentsToday = getAppointments(date);
         html += ` 
-            <div class="weekday" onclick="dayDateAdmin()">
+            <div class="weekday" onclick="dayDate()">
                 <b> ${date.toLocaleDateString()}</b><br/>`;
 
                 for(item of model.categories){
@@ -49,13 +48,4 @@ function createWeekHtmlAdmin(monday) {
              //her! if admin cal. is chosen - show extra info here + +
         }
         return html;
-}
-
-function dayDateAdmin(){
-    document.getElementById('content').innerHTML = `  
-    ${model.categories.filter(l => l.date === '25.3.2020').
-    map(n => `<ul>${n.time} <br>${n.name}<br> Deltagere: ${n.currentParticipants}</ul>`).join(' ')
-    }
-   
-    `;
 }

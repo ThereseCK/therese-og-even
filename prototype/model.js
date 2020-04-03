@@ -90,7 +90,7 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-    { id: 1, name: "Yoga", category: null, info: '' },  
+    { id: 1, name: "Yoga", category: null, info: '', color: null },  
     { id: 2, name: "Event", category: null, info: ''},
     { id: 3, name: "Session", category: null, info: '' },
     {
@@ -101,7 +101,9 @@ const model = {
       price: 1500,
       maxParticipants: 15,
       currentParticipants: 5,
-      category: 1
+      category: 1,
+      color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
+      time: '10.00'
     },
     {
       id: 5,
@@ -117,52 +119,70 @@ const model = {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-      date: '2020-09-13',
+      date: '4.4.2020',
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
-      category: 1
+      category: 1,
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
     },
     {
       id: 7,
-      name: "Fullmåneyoga",
+      name: "Fullmåne-yoga",
       info: "yoga ved fullmåne",
-      date: '2020-10-30',
+      date: '9.3.2020',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 5,
-      category: 2
+      category: 2,
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`
     },
     {
       id: 8,
-      name: "Nymåneyoga",
+      name: "Nymåne-yoga",
       info: "yoga ved nymåne",
-      date: '2020-02-29',
+      date: '25.3.2020',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 2,
-      category: 2
+      category: 2,
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+      time: '12.00'
     },
     {
       id: 9,
       name: "Veiledning",
       info: "veilednings time",
-      date: '2020-05-08',
+      date: '5.3.2020',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 0,
-      category: 3
+      category: 3,
+      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
     },
     {
       id: 10,
       name: "Yoga",
       info: "yoga",
-      date: '2020-08-30',
+      date: '18.3.2020',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 1,
-      category: 3
-    }
+      category: 3,
+      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+    },
+    {
+      id: 11,
+      name: "Yoga",
+      info: "Fjernes bare test",
+      date: '25.3.2020',
+      price: 1500,
+      maxParticipants: 1,
+      currentParticipants: 1,
+      category: 3,
+      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+      time: '14.00',
+    },
   ],
   login: {
     loggedInUser: null,

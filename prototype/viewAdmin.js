@@ -9,10 +9,10 @@ function adminMenu() {
     }
 }
 
-function calender() {
-  document.getElementById("content").innerHTML = "";
-  showMonthAdmin();
-}
+// function calender() {
+//   document.getElementById("content").innerHTML = "";
+//   showMonthAdmin();
+// }
 
 function adminMainPage() {
   adminMenu();

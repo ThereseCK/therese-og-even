@@ -28,16 +28,14 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
             <div class="week">${createWeekHtml(addDays(aMonday, 14))}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 21))}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 28))}</div>
-            <div class="week addButton"> + </div>
             
             `;
         }
 
-
         function createWeekHtml(monday) {
             var dayCount = 7;
             let html = '';
-
+        
             for (var i = 0; i < dayCount; i++) {
                 var date = addDays(monday, i);
                 var dayName = weekdayNames[date.getDay()];
@@ -45,48 +43,34 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
                 html += ` 
                     <div class="weekday" onclick="dayDate()">
                         <b> ${date.toLocaleDateString()}</b><br/>`;
-
+        
                         for(item of model.categories){
                             console.log(item.name);
                             if(date.toLocaleDateString() == item.date){
-                                html += `<p>${item.name}</p>`  
+                                html += `<p><b>${item.color}</b></p>`  
                             }
                             
                         }
                        
-
+        
                         html +=  `</div>`;
                     
                      //her! if admin cal. is chosen - show extra info here + +
                 }
                 return html;
         }
+                   
+                  
         function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
             document.getElementById('content').innerHTML = `  
-            Her kommer oversikt over dagen du har trykket på.
+            ${model.categories.filter(l => l.date === '25.3.2020').
+            map(n => `<ul>${n.time} <br>${n.name}<br><button> Meld på </button> </ul>`).join(' ')
+            }
+           
             `;
         }
 
-        // function getAppointments(date) {
-        //     var filteredList = [];
-        //     for (var i = 0; i < appointments.length; i++) {
-        //         var appointment = appointments[i];
-        //         if (appointment.date.getFullYear() == date.getFullYear()
-        //             && appointment.date.getMonth() == date.getMonth()
-        //             && appointment.date.getDate() == date.getDate()) {
-        //             filteredList.push(appointment);
-        //         }
-        //     }
-        //     return filteredList;
-        // }
-
-        // function showDate(year, month, day) {
-        //     var date = new Date(year, month, day);
-        //     var appointmentsToday = getAppointments(date);
-        //     alert(JSON.stringify(appointmentsToday));
         
-        //     //return JSON.stringify(appointmentsToday) // få ut en string
-        // }
 
         function getMondayOfCurrentWeek() {
             var today = new Date();
