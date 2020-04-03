@@ -4,19 +4,23 @@
   margin: 0;
   font-size: 15px;
   font-family: Helvetica;
-  text-align: center ;
+  
 }
 
 
 .header {
   text-align: center;
-  color: goldenrod;
+  color: darkslategrey;
+  text-shadow: goldenrod 1px 1px;
+  font-weight: bold;
 }
 
 #navbar {
   overflow: hidden;
-  background-color: goldenrod;
+  /* background-color: palegoldenrod; */
   margin-bottom: 15px;
+
+
 }
 
 #content {
@@ -37,7 +41,8 @@
 
 .weekday {
   overflow: hidden;
-  border: 1px solid gray;
+  border: 1px solid rgb(159, 185, 159);
+  color: darkslategray;
   padding: 5px;
   width: 35px;
   font-size: 8px;
@@ -47,6 +52,7 @@ input {
   padding-bottom: 15px;
   margin-bottom: 15px;
   text-align: center;
+
 }
 .addButton {
   border-radius: 50%;
@@ -54,5 +60,43 @@ input {
   width: 20px;
   height: 20px;
 }
+.navbarButton {
+  background-color: rgb(159, 185, 159); 
+  color: darkslategrey;
+  text-shadow: grey 1px 1px;
+  box-shadow:  grey 3px 3px 3px ;
+  height: 26px;
+}
+.infoButton {
+  background-color: rgb(159, 185, 159); 
+  color: darkslategrey;
+  text-shadow: grey 1px 1px;
+  box-shadow:  grey 3px 3px 3px ;
+  height: 50px;
+  width: 100px;
+  margin-bottom: 5px;
+ 
 
+}
+.weekCalendar{
+  width: 100px;
+  margin-bottom: 10px;
+  background-color: rgb(159, 185, 159); 
+  color: darkslategrey;
+}
+.ccRed{
+  color:red;
+  font-size: 10px;
 
+}
+
+.ccBlue{
+  color: blue;
+  font-size: 10px;
+}
+
+.ccGreen{
+  color:green;
+  font-size: 10px;
+
+}

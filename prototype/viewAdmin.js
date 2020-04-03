@@ -3,7 +3,7 @@ function adminMenu() {
   for (element of model.menuOptions)
     if (element.onlyForAdmin == true) {
   
-      document.getElementById("navbar").innerHTML += ` <button 
+      document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
           onclick="${element.functionName}()"> ${element.txt}
          </button>`;
     }

@@ -43,20 +43,22 @@ function showInfo() {
      <ul>
         ${categories
           .map(
-            cat => `
-        <button onclick="selectCategory(${cat.id})">${cat.name}</button>
+            cat => `<div>
+        <button class="infoButton" onclick="selectCategory(${cat.id})">${cat.name}</button></div>
          
         `
           )
           .join("")} 
         </ul> 
-        ${test}           
+        <hr>
+      ${test}  
+      <br>      
         <h2>Kommende Kurs</h2>
     <ul>
     ${courses
       .map(
         course => `
-        <li>${course.name} ${course.date}</li>   
+        ${course.name} <br> ${course.date}   
         `
       )
       .join("")}
@@ -73,7 +75,7 @@ function selectCategory(id) {
 function initMenu() {
   for (element of model.menuOptions) {
     if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
-      document.getElementById("navbar").innerHTML += ` <button 
+      document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
                              onclick="${element.functionName}()"> ${element.txt}
                              
                             </button>`;
@@ -82,7 +84,17 @@ function initMenu() {
 }
 
 function home() {
-  document.getElementById("content").innerHTML = "Forside";
+  document.getElementById("content").innerHTML = `
+  <h3 >Om Holistica</h3>
+  <img src="hol2.jpg" height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
+  <hr>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <br>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>`
 }
 
 function profil() {

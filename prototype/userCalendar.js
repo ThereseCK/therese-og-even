@@ -12,16 +12,20 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
 
         function showMonth() {
             document.getElementById('content').innerHTML = "";
+            
             document.getElementById('content').innerHTML = `
         
-        ${weekdayNames.map(d => `
+        ${weekdayNames.map(d => ` 
+    
             <div class="weekday week">${d}</div>`).join(' ')}
             
             `
+            document.getElementById('content').innerHTML = ` <button class="weekCalendar">Uke</button>`;
             let aMonday = currentMondayDate;
             while (aMonday.getDate() >= 7) {
                 aMonday = addDays(aMonday, -7);
             }
+           
             document.getElementById('content').innerHTML += ` 
             <div class="week">${createWeekHtml(aMonday)}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 7))}</div>
@@ -30,6 +34,11 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
             <div class="week">${createWeekHtml(addDays(aMonday, 28))}</div>
             
             `;
+            document.getElementById('content').innerHTML += `
+            <br>
+            <p class="ccRed">Rød: Yoga</p>
+            <p class="ccBlue">Blå: Events</p>
+            <p class="ccGreen">Grønn: Sessions</p>`
         }
 
         function createWeekHtml(monday) {
@@ -64,7 +73,7 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
         function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
             document.getElementById('content').innerHTML = `  
             ${model.categories.filter(l => l.date === '25.3.2020').
-            map(n => `<ul>${n.time} <br>${n.name}<br><button> Meld på </button> </ul>`).join(' ')
+            map(n => `<ul>${n.time} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
             }
            
             `;
