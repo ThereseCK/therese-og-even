@@ -1,13 +1,7 @@
 var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
-        // var calendarDiv = document.getElementById('calendar');
+       
         var currentMondayDate = getMondayOfCurrentWeek();
-        // var appointments = [
-        //     { date: new Date(2020, 2, 29, 12), text: 'Mno' },
-        //     { date: new Date(2020, 2, 1, 12), text: 'Abc' },
-        //     { date: new Date(2020, 2, 1, 12), text: 'Def' },
-        //     { date: new Date(2020, 2, 2, 12), text: 'Ghi' },
-        //     { date: new Date(2020, 2, 9, 12), text: 'Jkl' },
-        // ];
+        
         showMonth();
 
         function showMonth() {
@@ -15,18 +9,22 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
             
             document.getElementById('content').innerHTML = `
         
-        ${weekdayNames.map(d => ` 
+        ${model.calender.days.map(d => ` 
     
             <div class="weekday week">${d}</div>`).join(' ')}
             
             `
-            document.getElementById('content').innerHTML = ` <button class="weekCalendar">Uke</button>`;
+            document.getElementById('content').innerHTML = ` 
+            <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
+            <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
+            <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> `;
             let aMonday = currentMondayDate;
             while (aMonday.getDate() >= 7) {
                 aMonday = addDays(aMonday, -7);
             }
            
             document.getElementById('content').innerHTML += ` 
+            <div class="week">${monthLoop()}</div>
             <div class="week">${createWeekHtml(aMonday)}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 7))}</div>
             <div class="week">${createWeekHtml(addDays(aMonday, 14))}</div>
@@ -41,6 +39,11 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
             <p class="ccGreen">Grønn: Sessions</p>`
         }
 
+        
+function monthLoop(){
+return model.calender.days.map(n => `<div class="weekday">${n}</div>`).join(' ');
+}
+
         function createWeekHtml(monday) {
             var dayCount = 7;
             let html = '';
@@ -54,7 +57,6 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
                         <b> ${date.toLocaleDateString()}</b><br/>`;
         
                         for(item of model.categories){
-                            console.log(item.name);
                             if(date.toLocaleDateString() == item.date){
                                 html += `<p><b>${item.color}</b></p>`  
                             }
@@ -72,14 +74,13 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
                   
         function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
             document.getElementById('content').innerHTML = `  
-            ${model.categories.filter(l => l.date === '25.3.2020').
-            map(n => `<ul>${n.time} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
+            ${model.categories.filter(l => l.date === '8.4.2020').
+            map(n => `<ul>${n.time.timeslot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
             }
            
             `;
         }
 
-        
 
         function getMondayOfCurrentWeek() {
             var today = new Date();
@@ -90,4 +91,9 @@ var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag
 
         function addDays(date, dayCount) {
             return new Date(date.getTime() + (dayCount * 24 * 60 * 60 * 1000));
+        }
+
+        function switchMonth(x) {
+            currentMondayDate = addDays(currentMondayDate, x * 7);
+            showMonth();
         }

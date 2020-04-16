@@ -94,7 +94,11 @@ function home() {
   <br>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
-  <p>Her kommer tekst du ønsker skal vises på forsiden</p>`
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  `
 }
 
 function profil() {
@@ -121,4 +125,17 @@ function createUser() {
     <input type="text" value="Bekreft Passord"></input> <br>
     <p>Registrer deg på nyhetsbrev</p> <input type="checkbox"></input> <br>
     <button onclick="completeFraModell()">Bekreft</button>`;
+}
+showContactinfo();
+function showContactinfo() {
+  
+  document.getElementById('footer').innerHTML = `
+  <hr>
+  <b>Kontakt: </b>${model.contactInfo.name}<br>
+  <b> Adresse: </b>${model.contactInfo.adress}<br>
+  <b> Telefon: </b>${model.contactInfo.phone}<br>
+ <b> e-post: </b> ${model.contactInfo.email}
+
+
+  `;
 }

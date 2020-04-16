@@ -9,10 +9,7 @@ function adminMenu() {
     }
 }
 
-// function calender() {
-//   document.getElementById("content").innerHTML = "";
-//   showMonthAdmin();
-// }
+
 
 function adminMainPage() {
   adminMenu();
@@ -20,7 +17,6 @@ function adminMainPage() {
 
   model.logInSession = "Admin";
  
-  //tegne ut alle buttons som har admin=true
 }
 
 function logOut() {
@@ -59,7 +55,7 @@ function infoChange(){
             
             `;
         }
-        // <input type="text" value="Endre informasjon"> </input>
+
         function selectCategoryChange(id) {
             id = null;
             model.selectedCategoryId = id;

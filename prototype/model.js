@@ -11,6 +11,9 @@ const model = {
       "Lørdag",
       "Søndag"
     ],
+    ukeNr:[1,2,3,4,5],
+    timeSlots: ['08.00-10.00', '10.00-12.00', '12.00-14.00','14.00-16.00', '16.00-18.00'],
+
     months: [
       "Januar",
       "Februar",
@@ -83,10 +86,10 @@ const model = {
     }
   ],
   contactInfo: {
-    name: "Kontaktperson: Helle",
-    adress: "Sted: Larvik",
-    phone: "Telefonnummer: 90050098",
-    email: "e-post: helle@holistica.no"
+    name: "Helle",
+    adress: "Larvik",
+    phone: "90050098",
+    email: "helle@holistica.no"
   },
   selectedCategoryId: null,
   categories: [
@@ -97,13 +100,16 @@ const model = {
       id: 4,
       name: "Yin & Yang",
       info: "pusteyoga",
-      date: '25.3.2020',
+      date: '25.4.2020',
       price: 1500,
       maxParticipants: 15,
       currentParticipants: 5,
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
-      time: '10.00'
+      time: {
+        day: 5, 
+        timeSlot: 1,
+      }
     },
     {
       id: 5,
@@ -113,18 +119,25 @@ const model = {
       price: 2000,
       maxParticipants: 10,
       currentParticipants: 2,
-      category: 1
+      category: 1,
+      color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
+      time: {
+        timeslot: 2,
+      }
     },
     {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-      date: '4.4.2020',
+      date: '8.4.2020',
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
       category: 1,
       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+      time: {
+        timeslot: 0,
+      }
     },
     {
       id: 7,
@@ -135,7 +148,10 @@ const model = {
       maxParticipants: 5,
       currentParticipants: 5,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+      time: {
+        timeslot: 4,
+      }
     },
     {
       id: 8,
@@ -146,8 +162,10 @@ const model = {
       maxParticipants: 5,
       currentParticipants: 2,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
-      time: '12.00'
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`, 
+      time: {
+        timeslot: 2,
+      }
     },
     {
       id: 9,
@@ -159,6 +177,9 @@ const model = {
       currentParticipants: 0,
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+      time: {
+        timeslot: 3,
+      }
     },
     {
       id: 10,
@@ -181,7 +202,9 @@ const model = {
       currentParticipants: 1,
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
-      time: '14.00',
+      time: {
+        timeslot: 4,
+      }
     },
   ],
   login: {
