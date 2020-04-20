@@ -1,10 +1,11 @@
 const model = {
+  current : {
+    monthStartMonday: null,
+    week: null
+  },
   selectedModule: "Home",
-  logInSession:"Bruker",
+  logInSession: "Bruker",
   calender: {
-    ukepiltastForward: 0,
-    ukepiltastBackward: 0,
-    currentWeek: "2020-04-13",
     days: [
       "Mandag",
       "Tirsdag",
@@ -14,7 +15,8 @@ const model = {
       "Lørdag",
       "Søndag"
     ],
-    timeSlots: ['08.00-10.00', '10.00-12.00', '12.00-14.00','14.00-16.00', '16.00-18.00'],
+    ukeNr: [1, 2, 3, 4, 5],
+    timeSlots: ['08.00-10.00', '10.00-12.00', '12.00-14.00', '14.00-16.00', '16.00-18.00'],
 
     months: [
       "Januar",
@@ -95,112 +97,110 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-    { id: 1, name: "Yoga", category: null, info: '', color: null },  
-    { id: 2, name: "Event", category: null, info: ''},
+    { id: 1, name: "Yoga", category: null, info: '', color: null },
+    { id: 2, name: "Event", category: null, info: '' },
     { id: 3, name: "Session", category: null, info: '' },
     {
       id: 4,
       name: "Yin & Yang",
       info: "pusteyoga",
-      date: '2020-04-17',
+      date: '25.4.2020',
       price: 1500,
       maxParticipants: 15,
       currentParticipants: 5,
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 2,
+        day: 5,
+        timeSlot: 1,
       }
     },
     {
       id: 5,
       name: "Manneyoga",
       info: "Dette er en behagelig øvelse som passer for menn",
-      date: '2020-04-15',
+      date: '2020-05-05',
       price: 2000,
       maxParticipants: 10,
       currentParticipants: 2,
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 3,
+        timeslot: 2,
       }
     },
     {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-      date: '2020-04-08',
+      date: '8.4.2020',
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
       category: 1,
       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 0,
+        timeslot: 0,
       }
     },
     {
       id: 7,
       name: "Fullmåne-yoga",
       info: "yoga ved fullmåne",
-      date: '2020-03-19',
+      date: '9.3.2020',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 5,
       category: 2,
       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 4,
+        timeslot: 4,
       }
     },
     {
       id: 8,
       name: "Nymåne-yoga",
       info: "yoga ved nymåne",
-      date: '2020-03-25',
+      date: '25.3.2020',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 2,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`, 
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 2,
+        timeslot: 2,
       }
     },
     {
       id: 9,
       name: "Veiledning",
       info: "veilednings time",
-      date: '2020-05-13',
+      date: '5.3.2020',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 0,
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 3,
+        timeslot: 3,
       }
     },
     {
       id: 10,
       name: "Yoga",
       info: "yoga",
-      date: '2020-03-18',
+      date: '18.3.2020',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 1,
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
-      time: {
-        timeslot: 4,
-      }
     },
     {
       id: 11,
       name: "Yoga",
       info: "Fjernes bare test",
-      date: '2020-03-25',
+      date: '25.3.2020',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 1,
