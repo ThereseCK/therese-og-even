@@ -1,25 +1,23 @@
-var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
-
 function showMonth() {
     let mondayMonthStart = model.current.monthStartMonday;
     if (mondayMonthStart === null) {
         mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
     }
     document.getElementById('content').innerHTML = `                
-        <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
-        <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
-        <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
-        ${createWeekdayNamesHtml()}
-        <div class="week">${createWeekHtml(mondayMonthStart)}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 7))}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 14))}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 21))}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 28))}</div>
-        <br>
-        <p class="ccRed">Rød: Yoga</p>
-        <p class="ccBlue">Blå: Events</p>
-        <p class="ccGreen">Grønn: Sessions</p>
-        `;
+    <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
+    <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
+    <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
+    ${createWeekdayNamesHtml()}
+    <div class="week">${createWeekHtml(mondayMonthStart)}</div>
+    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 7))}</div>
+    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 14))}</div>
+    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 21))}</div>
+    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 28))}</div>
+    <br>
+    <p class="ccRed">Rød: Yoga</p>
+    <p class="ccBlue">Blå: Events</p>
+    <p class="ccGreen">Grønn: Sessions</p>
+    `;
 }
 
 function createWeekdayNamesHtml() {
@@ -41,7 +39,7 @@ function createWeekHtml(monday) {
 
     for (var i = 0; i < dayCount; i++) {
         var date = addDays(monday, i);
-        var dayName = weekdayNames[date.getDay()];
+        var dayName = model.calender.days[date.getDay()];
         // var appointmentsToday = getAppointments(date);
         html += ` 
                     <div class="weekday" onclick="dayDate()">

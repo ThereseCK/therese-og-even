@@ -88,7 +88,7 @@ function home() {
   <h3 >Om </h3>
   <img src="hol2.jpg" height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
   <hr>
-  <p>Her kommer tekst du ønsker skal vises på forsiden</p>
+  <p>Er dette riktig fil?</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <br>
