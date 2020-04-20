@@ -1,6 +1,10 @@
 const model = {
+  current : {
+    monthStartMonday: null,
+    week: null
+  },
   selectedModule: "Home",
-  logInSession:"Bruker",
+  logInSession: "Bruker",
   calender: {
     ukepiltastForward: 0,
     ukepiltastBackward: 0,
@@ -95,8 +99,8 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-    { id: 1, name: "Yoga", category: null, info: '', color: null },  
-    { id: 2, name: "Event", category: null, info: ''},
+    { id: 1, name: "Yoga", category: null, info: '', color: null },
+    { id: 2, name: "Event", category: null, info: '' },
     { id: 3, name: "Session", category: null, info: '' },
     {
       id: 4,
@@ -163,7 +167,7 @@ const model = {
       maxParticipants: 5,
       currentParticipants: 2,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`, 
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
         timeSlot: 2,
       }
