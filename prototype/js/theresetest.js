@@ -1,6 +1,4 @@
 
-
-weekCalendar();
 function weekCalendar(){
     document.getElementById('content').innerHTML = '';
     

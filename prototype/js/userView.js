@@ -126,9 +126,8 @@ function createUser() {
     <p>Registrer deg på nyhetsbrev</p> <input type="checkbox"></input> <br>
     <button onclick="completeFraModell()">Bekreft</button>`;
 }
-showContactinfo();
-function showContactinfo() {
-  
+
+function showContactinfo() {  
   document.getElementById('footer').innerHTML = `
   <hr>
   <b>Kontakt: </b>${model.contactInfo.name}<br>

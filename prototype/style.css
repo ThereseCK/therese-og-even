@@ -1,13 +1,9 @@
-
- 
  body {
   margin: 0;
   font-size: 15px;
   font-family: Helvetica;
-  color: rgb(75,75,75);
-  
+  color: rgb(75,75,75);  
 }
-
 
 .header {
   text-align: center;

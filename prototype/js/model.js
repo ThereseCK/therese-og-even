@@ -1,6 +1,6 @@
 const model = {
   selectedModule: "Home",
-  logInSession:"Bruker",
+  logInSession: "Bruker",
   calender: {
     days: [
       "Mandag",
@@ -11,8 +11,8 @@ const model = {
       "Lørdag",
       "Søndag"
     ],
-    ukeNr:[1,2,3,4,5],
-    timeSlots: ['08.00-10.00', '10.00-12.00', '12.00-14.00','14.00-16.00', '16.00-18.00'],
+    ukeNr: [1, 2, 3, 4, 5],
+    timeSlots: ['08.00-10.00', '10.00-12.00', '12.00-14.00', '14.00-16.00', '16.00-18.00'],
 
     months: [
       "Januar",
@@ -93,8 +93,8 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-    { id: 1, name: "Yoga", category: null, info: '', color: null },  
-    { id: 2, name: "Event", category: null, info: ''},
+    { id: 1, name: "Yoga", category: null, info: '', color: null },
+    { id: 2, name: "Event", category: null, info: '' },
     { id: 3, name: "Session", category: null, info: '' },
     {
       id: 4,
@@ -107,7 +107,7 @@ const model = {
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
-        day: 5, 
+        day: 5,
         timeSlot: 1,
       }
     },
@@ -162,7 +162,7 @@ const model = {
       maxParticipants: 5,
       currentParticipants: 2,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`, 
+      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
         timeslot: 2,
       }

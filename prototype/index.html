@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="model.js"></script>
-    <script src="testside.js"></script>
-    <script src="userView.js"></script>
-    <script src="adminView.js"></script>
-    <script src="adminCalendar.js"></script>
-    <script src="userCalendar.js"></script>
-    
-    <!-- <script src="weekcalender.js"></script> -->
+    <script src="js/model.js"></script>
+    <script src="js/testside.js"></script>
+    <script src="js/userView.js"></script>
+    <script src="js/adminView.js"></script>
+    <script src="js/adminCalendar.js"></script>
+    <script src="js/userCalendar.js"></script>
+    <script src="js/theresetest.js"></script>
+    <script src="js/userView.js"></script>
+</head>
 
-    <!-- <script src="evenTest.js"></script> -->
-    <script src="theresetest.js"></script>
+<body onload="init()">
 
-        </head>
-        <body>
-         
-            <div class="header">
-                <img src="holisticaname1.jpg" style="width:200px; height: 130px;"/>
-               
-            </div>   
-    <div id="navbar"> </div>
-        <div id="content"> 
+    <div class="header">
+        <img src="holisticaname1.jpg" style="width:200px; height: 130px;" />
+
     </div>
-   <div id="footer"></div>
+    <div id="navbar"> </div>
+    <div id="content"> </div>
+    <div id="footer"></div>
     <!-- <div id="calendar"></div> -->
-    <script src="userView.js"></script>
-    
+
     <script>
-    initMenu();
-  home(); 
-  
-</script>
+        function init() {
+            showContactinfo();
+            initMenu();
+            home();
+            showMonth();
+        }
+    </script>
 
 
 </body>
