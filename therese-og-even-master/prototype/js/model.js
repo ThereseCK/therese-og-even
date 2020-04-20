@@ -6,6 +6,9 @@ const model = {
   selectedModule: "Home",
   logInSession: "Bruker",
   calender: {
+    ukepiltastForward: 0,
+    ukepiltastBackward: 0,
+    currentWeek: "2020-04-13",
     days: [
       "Mandag",
       "Tirsdag",
