@@ -30,12 +30,6 @@
 
 /* Kalender */
 
-.week {
-  overflow: hidden;
- display: flex;
-  float: left;
-  text-align: center;
-}
 
 .weekday, td {
   overflow: hidden;

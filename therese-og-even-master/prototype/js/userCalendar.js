@@ -7,22 +7,24 @@ function showMonth() {
     <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
     <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
     <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
-    ${createWeekdayNamesHtml()}
-    <div class="week">${createWeekHtml(mondayMonthStart)}</div>
-    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 7))}</div>
-    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 14))}</div>
-    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 21))}</div>
-    <div class="week">${createWeekHtml(addDays(mondayMonthStart, 28))}</div>
-    <br>
-    <p class="ccRed">Rød: Yoga</p>
-    <p class="ccBlue">Blå: Events</p>
-    <p class="ccGreen">Grønn: Sessions</p>
+   <table class="weekday">
+       <tr> ${createWeekdayNamesHtml()}</tr>
+        <tr>${createWeekHtml(mondayMonthStart)}</tr>
+        <tr>${createWeekHtml(addDays(mondayMonthStart, 7))}</tr>
+        <tr>${createWeekHtml(addDays(mondayMonthStart, 14))}</tr>
+        <tr>${createWeekHtml(addDays(mondayMonthStart, 21))}</tr>
+        <tr >${createWeekHtml(addDays(mondayMonthStart, 28))}</tr>
+        </table>
+        <br>
+        <p class="ccRed">Rød: Yoga</p>
+        <p class="ccBlue">Blå: Events</p>
+        <p class="ccGreen">Grønn: Sessions</p>
     `;
 }
 
 function createWeekdayNamesHtml() {
     return model.calender.days.map(d => ` 
-        <div class="weekday week">${d}</div>
+        <th class="weekday">${d}</th>
         `).join(' ');
 }
 
@@ -42,7 +44,7 @@ function createWeekHtml(monday) {
         var dayName = model.calender.days[date.getDay()];
         // var appointmentsToday = getAppointments(date);
         html += ` 
-                    <div class="weekday" onclick="dayDate()">
+                    <td class="weekday" onclick="dayDate()">
                         <b> ${date.toLocaleDateString()}</b><br/>`;
 
         for (item of model.categories) {
@@ -53,7 +55,7 @@ function createWeekHtml(monday) {
         }
 
 
-        html += `</div>`;
+        html += `</td>`;
 
         //her! if admin cal. is chosen - show extra info here + +
     }

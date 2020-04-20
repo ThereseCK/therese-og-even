@@ -9,12 +9,14 @@ function showMonth() {
         <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
         <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
         <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
-        ${createWeekdayNamesHtml()}
-        <div class="week">${createWeekHtml(mondayMonthStart)}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 7))}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 14))}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 21))}</div>
-        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 28))}</div>
+        <table>
+       <tr> ${createWeekdayNamesHtml()}</tr>
+        <tr class="week"><td>${createWeekHtml(mondayMonthStart)}</td></tr>
+        <tr class="week"><td>${createWeekHtml(addDays(mondayMonthStart, 7))}</td></tr>
+        <tr class="week"><td>${createWeekHtml(addDays(mondayMonthStart, 14))}</td></tr>
+        <tr class="week"><td>${createWeekHtml(addDays(mondayMonthStart, 21))}</td></tr>
+        <tr class="week"><td>${createWeekHtml(addDays(mondayMonthStart, 28))}</td></tr>
+        </table>
         <br>
         <p class="ccRed">Rød: Yoga</p>
         <p class="ccBlue">Blå: Events</p>
@@ -24,7 +26,7 @@ function showMonth() {
 
 function createWeekdayNamesHtml() {
     return model.calender.days.map(d => ` 
-        <div class="weekday week">${d}</div>
+        <th class="weekday week">${d}</th>
         `).join(' ');
 }
 
