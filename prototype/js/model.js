@@ -1,4 +1,8 @@
 const model = {
+  current : {
+    monthStartMonday: null,
+    week: null
+  },
   selectedModule: "Home",
   logInSession: "Bruker",
   calender: {

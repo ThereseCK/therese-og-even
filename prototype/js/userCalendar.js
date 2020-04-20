@@ -1,43 +1,38 @@
 var weekdayNames = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
 
-var currentMondayDate = getMondayOfCurrentWeek();
-
 function showMonth() {
-    document.getElementById('content').innerHTML = `
-        
-        ${model.calender.days.map(d => ` 
-    
-            <div class="weekday week">${d}</div>`).join(' ')}
-            
-            `
-    document.getElementById('content').innerHTML = ` 
-            <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
-            <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
-            <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> `;
-    let aMonday = currentMondayDate;
-    while (aMonday.getDate() >= 7) {
-        aMonday = addDays(aMonday, -7);
+    let mondayMonthStart = model.current.monthStartMonday;
+    if (mondayMonthStart === null) {
+        mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
     }
-
-    document.getElementById('content').innerHTML += ` 
-            <div class="week">${monthLoop()}</div>
-            <div class="week">${createWeekHtml(aMonday)}</div>
-            <div class="week">${createWeekHtml(addDays(aMonday, 7))}</div>
-            <div class="week">${createWeekHtml(addDays(aMonday, 14))}</div>
-            <div class="week">${createWeekHtml(addDays(aMonday, 21))}</div>
-            <div class="week">${createWeekHtml(addDays(aMonday, 28))}</div>
-            
-            `;
-    document.getElementById('content').innerHTML += `
-            <br>
-            <p class="ccRed">Rød: Yoga</p>
-            <p class="ccBlue">Blå: Events</p>
-            <p class="ccGreen">Grønn: Sessions</p>`
+    document.getElementById('content').innerHTML = `                
+        <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
+        <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
+        <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
+        ${createWeekdayNamesHtml()}
+        <div class="week">${createWeekHtml(mondayMonthStart)}</div>
+        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 7))}</div>
+        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 14))}</div>
+        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 21))}</div>
+        <div class="week">${createWeekHtml(addDays(mondayMonthStart, 28))}</div>
+        <br>
+        <p class="ccRed">Rød: Yoga</p>
+        <p class="ccBlue">Blå: Events</p>
+        <p class="ccGreen">Grønn: Sessions</p>
+        `;
 }
 
+function createWeekdayNamesHtml() {
+    return model.calender.days.map(d => ` 
+        <div class="weekday week">${d}</div>
+        `).join(' ');
+}
 
-function monthLoop() {
-    return model.calender.days.map(n => `<div class="weekday">${n}</div>`).join(' ');
+function getMondayOfFirstWeekOfMonth(date) {
+    while (date.getDate() >= 7) {
+        date = addDays(date, -7);
+    }
+    return date;
 }
 
 function createWeekHtml(monday) {
@@ -90,6 +85,6 @@ function addDays(date, dayCount) {
 }
 
 function switchMonth(x) {
-    currentMondayDate = addDays(currentMondayDate, x * 7);
+    model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 7);
     showMonth();
 }
