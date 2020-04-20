@@ -85,6 +85,6 @@ function addDays(date, dayCount) {
 }
 
 function switchMonth(x) {
-    model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 7);
+    model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 28);
     showMonth();
 }

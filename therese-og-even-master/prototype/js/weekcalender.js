@@ -1,4 +1,6 @@
+var currentMondayDate = getMondayOfCurrentWeek();
 function weekCalendar(){ 
+    document.getElementById('content').innerHTML = '';
 document.getElementById('content').innerHTML += `<button class="weekCalendar" onclick="switchWeek(-1)">&lt;&lt;</button>
 <button class="weekCalendar" onclick="showMonth()">Måned</button>
 <button class="weekCalendar" onclick="switchWeek(+1)">&gt;&gt;</button>
