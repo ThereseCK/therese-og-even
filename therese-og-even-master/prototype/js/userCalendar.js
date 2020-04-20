@@ -1,4 +1,4 @@
-function showMonth() {
+function userCalendar() {
     let mondayMonthStart = model.current.monthStartMonday;
     if (mondayMonthStart === null) {
         mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
@@ -7,7 +7,7 @@ function showMonth() {
     <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
     <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
     <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
-   <table class="weekday">
+    <table class="weekday">
        <tr> ${createWeekdayNamesHtml()}</tr>
         <tr>${createWeekHtml(mondayMonthStart)}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 7))}</tr>
@@ -65,8 +65,8 @@ function createWeekHtml(monday) {
 
 function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
     document.getElementById('content').innerHTML = `  
-            ${model.categories.filter(l => l.date === '8.4.2020').
-            map(n => `<ul>${n.time.timeslot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
+            ${model.categories.filter(l => l.date === '2020-04-24').
+            map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
         }
            
             `;
@@ -86,5 +86,5 @@ function addDays(date, dayCount) {
 
 function switchMonth(x) {
     model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 28);
-    showMonth();
+    userCalendar();
 }

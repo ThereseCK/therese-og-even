@@ -1,79 +1,69 @@
  body {
   margin: 0;
-  font-size: 15px;
-  font-family: Helvetica;
-  color: rgb(75,75,75);  
+  padding: 0; 
+
+  /* GRID */
+}
+div.page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 2fr 0.5fr 7fr;
+  grid-template-areas: 'header header'
+                      'navbar navbar'
+                      'content content';
+                      /* 'footer footer'; */
+
+                      align-items: center;
+  justify-items: center;
 }
 
 .header {
+  grid-area: header;
   text-align: center;
 }
 
 #navbar {
-  overflow: hidden;
+  grid-area: navbar;
+  /* overflow: hidden; */
   /* background-color: palegoldenrod; */
-  margin-bottom: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
   text-align: center;
-  z-index: 1;
-
+  /* z-index: 1; */
 }
 
 #content {
+  grid-area: content;
   padding: 16px;
   text-align: center;
   overflow : auto;
-	height : 540px;
-	width : 330px;
+
 }
+    #footer{
+      /* grid-area: footer; */
+      font-size: 10px;
+    text-align: left;
+    }
 
 /* Kalender */
 
 
-.weekday, td {
+.weekday{
+ 
   overflow: hidden;
   border: 1px solid rgb(159, 185, 159);
   color: darkslategray;
-  padding: 5px;
-  width: 35px;
+  padding: 10px;
+  width: auto;
   font-size: 8px;
   text-align: center;
   border-collapse: collapse;
 }
 
-input {
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-
-}
 .addButton {
   border-radius: 50%;
-  background-color: rgba(136, 155, 148, 0);
+  background-color: lightskyblue;
   width: 20px;
   height: 20px;
-}
-.navbarButton {
-  background-color: rgba(241, 232, 232, 0.6);
-  color: rgb(75,75,75);
-  /* background-color: rgb(173, 191, 186);  
-   color: darkslategrey; */
-  /* text-shadow: grey 1px 1px; */
-  box-shadow:  grey 3px 3px 3px ;
-  height: 26px;
-  font-size: 12px;
-}
-.infoButton {
-  background-color: rgb(173, 191, 186); 
-  color: darkslategrey;
-  text-shadow: grey 1px 1px;
-  box-shadow:  grey 3px 3px 3px ;
-  height: 50px;
-  width: 100px;
-  margin-bottom: 5px;
- 
-
 }
 .weekCalendar{
   width: 100px;
@@ -84,22 +74,47 @@ input {
 .ccRed{
   color:red;
   font-size: 10px;
-
+  
 }
 
 .ccBlue{
   color: blue;
   font-size: 10px;
 }
-
 .ccGreen{
   color:green;
   font-size: 10px;
-
-}
-#footer{
-  margin-left: 15px;
-  margin-bottom: 5px;
-  font-size: 10px;
 }
 
+/* LOGIN */
+
+input {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+  
+ /* HOMEPAGE */
+ 
+ .navbarButton {
+   background-color: rgba(241, 232, 232, 0.6);
+   color: rgb(75,75,75);
+   /* background-color: rgb(173, 191, 186);  
+   color: darkslategrey; */
+   /* text-shadow: grey 1px 1px; */
+   box-shadow:  grey 3px 3px 3px ;
+   height: 26px;
+   font-size: 12px;
+ }
+
+  .infoButton {
+    background-color: rgb(173, 191, 186); 
+    color: darkslategrey;
+    text-shadow: grey 1px 1px;
+    box-shadow:  grey 3px 3px 3px ;
+    height: 50px;
+    width: 100px;
+    margin-bottom: 5px;
+    
+    
+  }

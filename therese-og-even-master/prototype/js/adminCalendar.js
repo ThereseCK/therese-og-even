@@ -1,24 +1,22 @@
-function calender(){
+function adminCalendar(){
     document.getElementById('content').innerHTML = "";
-   
+    let mondayMonthStart = model.current.monthStartMonday;
+    if (mondayMonthStart === null) {
+        mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
+    }
     document.getElementById('content').innerHTML = ` 
             <button class="weekCalendar" onclick="switchMonthAdmin(-1)">&lt;&lt;</button>
             <button class="weekCalendar">Uke</button>
-            <button class="weekCalendar" onclick="switchMonthAdmin(+1)">&gt;&gt;</button> `;
+            <button class="weekCalendar" onclick="switchMonthAdmin(+1)">&gt;&gt;</button> 
 
-    let aMonday = currentMondayDate;
-    while (aMonday.getDate() >= 7) {
-        aMonday = addDays(aMonday, -7);
-    }
-    document.getElementById('content').innerHTML += ` 
-   
-    <div class="week">${weekLoopAdmin()}</div>
-        <div class="week">${createWeekHtmlAdmin(aMonday)}</div>
-        <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 7))}</div>
-        <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 14))}</div>
-        <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 21))}</div>
-        <div class="week">${createWeekHtmlAdmin(addDays(aMonday, 28))}</div>
-        <br>
+<table class="weekday">
+    <tr>${weekLoopAdmin()}</tr>
+    <tr>${createWeekHtmlAdmin( mondayMonthStart)}</tr>
+    <tr>${createWeekHtmlAdmin(addDays( mondayMonthStart, 7))}</tr>
+    <tr>${createWeekHtmlAdmin(addDays( mondayMonthStart, 14))}</tr>
+    <tr>${createWeekHtmlAdmin(addDays( mondayMonthStart, 21))}</tr>
+    <tr>${createWeekHtmlAdmin(addDays( mondayMonthStart, 28))}</tr>
+        </table>
         
        
     
@@ -27,7 +25,7 @@ function calender(){
 }
 
 function weekLoopAdmin(){
-return model.calender.days.map(n => `<div class="weekday">${n}</div>`).join(' ');
+return model.calender.days.map(n => `<th class="weekday">${n}</th>`).join(' ');
 }
 
 
@@ -38,9 +36,9 @@ function createWeekHtmlAdmin(monday) {
 
     for (var i = 0; i < dayCount; i++) {
         var date = addDays(monday, i);
-        var dayName = weekdayNames[date.getDay()];
+        var dayName = model.calender.days[date.getDay()];
         // var appointmentsToday = getAppointments(date);
-            html += `<div class="weekday" onclick="dayDateAdmin()">
+            html += `<td class="weekday" onclick="dayDateAdmin()">
                 <b> ${date.toLocaleDateString()}</b><br/>`;
 
                 for(item of model.categories){
@@ -49,7 +47,7 @@ function createWeekHtmlAdmin(monday) {
                         html += `<p><b>${item.name}</b></p>`  
                     }
                 }
-                html +=  `</div>`;
+                html +=  `</td>`;
             
              //her! if admin cal. is chosen - show extra info here + +
         }
@@ -58,14 +56,14 @@ function createWeekHtmlAdmin(monday) {
 
 function dayDateAdmin(){
     document.getElementById('content').innerHTML = `  
-    ${model.categories.filter(l => l.date === '25.3.2020').
-    map(n => `<ul>${n.time.timeslot} <br>${n.name}<br> Deltagere: ${n.currentParticipants}</ul>`).join(' ')
+    ${model.categories.filter(l => l.date === '2020-04-24').
+    map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br> Deltagere: ${n.currentParticipants}</ul>`).join(' ')
     }
    
     `;
 }
 function switchMonthAdmin(deltaWeek) {
-    currentMondayDate = addDays(currentMondayDate, deltaWeek * 7);
-    calender();
+    model.current.monthStartMonday = addDays(model.current.monthStartMonday, deltaWeek * 28);
+    adminCalendar();
 }
 

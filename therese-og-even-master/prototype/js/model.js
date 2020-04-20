@@ -75,7 +75,7 @@ const model = {
   menuOptions: [
     { id: 5, functionName: "home", txt: "&#127968;", onlyForAdmin: false },
     { id: 3, functionName: "showInfo", txt: "Informasjon", onlyForAdmin: false },
-    { id: 4, functionName: "showMonth", txt: "Kalender & Booking", onlyForAdmin: false },
+    { id: 4, functionName: "userCalendar", txt: "Kalender & Booking", onlyForAdmin: false },
     { id: 2, functionName: "showLogIn", txt: "Logg inn", onlyForAdmin: false },
     { id: 1, functionName: "profil", txt: "&#128100;", onlyForAdmin: false },
     { id: 6, functionName: "logOut", txt: "Logg Ut", onlyForAdmin: true },
@@ -87,7 +87,7 @@ const model = {
     },
     {
       id: 8,
-      functionName: "calender",
+      functionName: "adminCalendar",
       txt: "Legg til I kalender",
       onlyForAdmin: true
     }
