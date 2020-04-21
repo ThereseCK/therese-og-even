@@ -7,7 +7,7 @@ document.getElementById('content').innerHTML += `<button class="weekCalendar" on
 <table class="weekday">
 <tr>
 <th> </th>
-${weekLoop()}
+${weekLoop()} <br>
 </tr>
 <tr>
 
@@ -23,48 +23,60 @@ ${appointments(4)}
 
 
 function weekLoop(){
-
+    
     let todaysDate = new Date();
     let onejan = new Date(todaysDate.getFullYear(), 0, 1);
-let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 );
-  
-console.log(week + model.calender.ukepiltastForward, " er dette et ukenr? :<")
+    let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 );
+    
+    
+    console.log(week + model.calender.ukepiltastForward, " er dette et ukenr? :<")
     //finne mandagens dato i current week og plusse på én for hver dag
      //pluss1 = tirsdag + 2 ons osv
- let firstdayOfThisWeek = todaysDate.getDate()
-   
-    return model.calender.days.map(n => `<th class="weekday">${n}</th>
-    `).join(' ');
+ let firstdayOfThisWeek = todaysDate.getDate()  
+ const dayNos = Array.from(model.calender.days.keys());
+ const currentweekNo = model.calender.currentWeek;
+ //dayNos.map( dayNo => ` ${dateAsText(currentweekNo, dayNo)}`) 
+ let selectedWeeksDates = dayNos.map( dayNo => ` ${dateAsText(currentweekNo, dayNo)}`); 
+    return dayNos.map( dayNo => `<th class="weekday">${model.calender.days[dayNo] } <br> ${dateAsText(currentweekNo, dayNo)}
+
+    </th>
+    `).join(' ')
+ 
+    
+    ;
     }
-
-
-
         function appointments(timeSlot, categories){
    
-
             const dayNos = Array.from(model.calender.days.keys());
+            
             return `
                 <tr><th class="weekday">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
-                `
+                    `
                     <td class="weekday">
-                        ${dateAsText(model.calender.currentWeek, dayNo)}
-               
-                        
+                   
+                       
+        
                             ${eventsFromDayAndTime(model.calender.currentWeek, dayNo, timeSlot,).map(c => `
                           
                              
-                                ${model.categories.name} <strong ><br>(${/*categories.info.join(', ')*/''}</strong>)    
+                                ${model.categories.name}
+                                <button class="calendarButton"> Meld på</button>   
                             <br>
                             `).join('')}
                        
                     </td>`).join('')}
                     </tr>`;
         }
+
         
-        function dateAsText(baseDateTxt, dayCount){
-            const baseDateMillis = new Date(baseDateTxt).getTime();
+
+        dateAsText();
+        function dateAsText(hei, dayCount){
+            const baseDateMillis = new Date(hei).getTime();
             const date = new Date(baseDateMillis+1000*60*60*24*dayCount);
+            
             return date.toLocaleDateString();
+
         }
         
         function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
