@@ -13,7 +13,7 @@ function userCalendar() {
         <tr>${createWeekHtml(addDays(mondayMonthStart, 7))}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 14))}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 21))}</tr>
-        <tr >${createWeekHtml(addDays(mondayMonthStart, 28))}</tr>
+        <tr>${createWeekHtml(addDays(mondayMonthStart, 28))}</tr>
         </table>
         <br>
         <p class="ccRed">Rød: Yoga</p>
@@ -71,6 +71,7 @@ function dayDate() { //det er her lista over dagens events   - sende med påklik
            
             `;
 }
+
 
 
 function getMondayOfCurrentWeek() {

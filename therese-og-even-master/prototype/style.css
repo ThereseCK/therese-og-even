@@ -11,10 +11,10 @@ div.page {
   grid-template-rows: 2fr 0.5fr 7fr;
   grid-template-areas: 'header header'
                       'navbar navbar'
-                      'content content';
-                      /* 'footer footer'; */
+                      'content content'
+                      ;
 
-                      align-items: center;
+  align-items: center;
   justify-items: center;
 }
 
@@ -36,10 +36,12 @@ div.page {
   padding: 16px;
   text-align: center;
   overflow : auto;
+	height : 540px;
+	width : 330px;
+ 
 
 }
     #footer{
-      /* grid-area: footer; */
       font-size: 10px;
     text-align: left;
     }
@@ -48,15 +50,14 @@ div.page {
 
 
 .weekday{
- 
   overflow: hidden;
   border: 1px solid rgb(159, 185, 159);
   color: darkslategray;
-  padding: 10px;
-  width: auto;
   font-size: 8px;
   text-align: center;
   border-collapse: collapse;
+  height: 50px;
+  width: auto;
 }
 
 .addButton {

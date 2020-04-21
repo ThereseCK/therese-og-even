@@ -2,7 +2,7 @@ var currentMondayDate = getMondayOfCurrentWeek();
 function weekCalendar(){ 
     document.getElementById('content').innerHTML = '';
 document.getElementById('content').innerHTML += `<button class="weekCalendar" onclick="switchWeek(-1)">&lt;&lt;</button>
-<button class="weekCalendar" onclick="showMonth()">Måned</button>
+<button class="weekCalendar" onclick="userCalendar()">Måned</button>
 <button class="weekCalendar" onclick="switchWeek(+1)">&gt;&gt;</button>
 <table class="weekday">
 <tr>
@@ -20,16 +20,10 @@ ${appointments(4)}
 </table>
 `;
 }
-// ${timeLoop()}
 
-
-function timeLoop(){
-    return model.calender.timeSlot.map(n => `<tr class="weekday"><td>${n}</td></tr>`).join(' ');
-    }
 
 function weekLoop(){
-    // return model.calender.days.map(n => `<th class="weekday">${n}</th>`).join(' ');
-    
+
     let todaysDate = new Date();
     let onejan = new Date(todaysDate.getFullYear(), 0, 1);
 let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 );
@@ -44,24 +38,25 @@ console.log(week + model.calender.ukepiltastForward, " er dette et ukenr? :<")
     }
 
 
+
         function appointments(timeSlot, categories){
    
 
             const dayNos = Array.from(model.calender.days.keys());
             return `
-                <tr><th>${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
+                <tr><th class="weekday">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
                 `
-                    <td>
+                    <td class="weekday">
                         ${dateAsText(model.calender.currentWeek, dayNo)}
                
-                        <ul>
+                        
                             ${eventsFromDayAndTime(model.calender.currentWeek, dayNo, timeSlot,).map(c => `
                           
-                            <li> 
+                             
                                 ${model.categories.name} <strong ><br>(${/*categories.info.join(', ')*/''}</strong>)    
-                            </li><br>
+                            <br>
                             `).join('')}
-                        </ul>
+                       
                     </td>`).join('')}
                     </tr>`;
         }
