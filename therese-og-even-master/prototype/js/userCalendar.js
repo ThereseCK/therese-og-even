@@ -3,10 +3,12 @@ function userCalendar() {
     if (mondayMonthStart === null) {
         mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
     }
-    document.getElementById('content').innerHTML = `                
-    <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
-    <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
-    <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
+    document.getElementById('content').innerHTML = `         
+    <div>       
+        <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
+        <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
+        <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
+    </div>
     <table class="weekday">
        <tr> ${createWeekdayNamesHtml()}</tr>
         <tr>${createWeekHtml(mondayMonthStart)}</tr>
@@ -14,11 +16,11 @@ function userCalendar() {
         <tr>${createWeekHtml(addDays(mondayMonthStart, 14))}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 21))}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 28))}</tr>
-        </table>
-        <br>
-        <p class="ccRed">Rød: Yoga</p>
-        <p class="ccBlue">Blå: Events</p>
-        <p class="ccGreen">Grønn: Sessions</p>
+    </table>
+    <br>
+    <p class="ccRed">Rød: Yoga</p>
+    <p class="ccBlue">Blå: Events</p>
+    <p class="ccGreen">Grønn: Sessions</p>
     `;
 }
 

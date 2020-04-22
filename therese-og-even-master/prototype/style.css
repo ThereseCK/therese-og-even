@@ -7,15 +7,15 @@
 div.page {
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: auto;
   grid-template-rows: 2fr 0.5fr 7fr;
-  grid-template-areas: 'header header'
-                      'navbar navbar'
-                      'content content'
+  grid-template-areas: 'header'
+                      'navbar'
+                      'content'
                       ;
 
-  align-items: center;
-  justify-items: center;
+  /* align-items: center;
+  justify-items: center; */
 }
 
 .header {
@@ -33,11 +33,11 @@ div.page {
 
 #content {
   grid-area: content;
-  padding: 16px;
   text-align: center;
-  overflow : auto;
-	height : 540px;
-	width : 330px;
+    display: flex;
+  flex-direction: column;
+	/* height : 540px;
+	width : 330px; */
  
 
 }
