@@ -51,7 +51,7 @@ function dayDate() { //det er her lista over dagens events   - sende med påklik
 
 function getMondayOfCurrentWeek() {
     var today = new Date();
-    var diffToMonday = 1 - today.getDay();
+    var diffToMonday = 2 - today.getDay();
     var monday = addDays(today, diffToMonday);
     return monday;
 }

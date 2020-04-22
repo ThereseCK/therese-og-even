@@ -1,10 +1,11 @@
 function showLogIn() {
-  let loginHTML = `
+  let loginHTML = `<div>
     <input type="text" value="Brukernavn"> </input> <br>
     <input type="text" value="Passord"> </input> <br>
     <button onclick="profil()"> Logg Inn</button>
     <button onclick="adminMainPage()">Admin</button>
     <button onclick="createUser()">Registrer bruker</button>
+    </div>
     `;
   document.getElementById("content").innerHTML = loginHTML;
 }
@@ -86,7 +87,9 @@ function initMenu() {
 function home() {
   document.getElementById("content").innerHTML = `
   <h3 >Om </h3>
-  <img src="hol2.jpg" height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
+  <div>
+  <img src="hol2.jpg"  height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
+  </div>
   <hr>
   <p>Er dette riktig fil?</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
@@ -116,7 +119,7 @@ function profil() {
 
 function createUser() {
   document.getElementById("content").innerHTML = `
-    
+    <div>
     <input type="text" value="Navn"></input> <br>
     <input type="text" value="Brukernavn"></input> <br>
     <input type="text" value="Epost"></input> <br>
@@ -124,7 +127,8 @@ function createUser() {
     <input type="text" value="Nytt passord"></input> <br>
     <input type="text" value="Bekreft Passord"></input> <br>
     <p>Registrer deg på nyhetsbrev</p> <input type="checkbox"></input> <br>
-    <button onclick="completeFraModell()">Bekreft</button>`;
+    <button onclick="completeFraModell()">Bekreft</button>
+    </div>`;
 }
 
 function showContactinfo() {  

@@ -1,4 +1,4 @@
- body {
+body {
   margin: 0;
   padding: 0; 
 
@@ -32,8 +32,10 @@ div.page {
 }
 
 #content {
+  margin-top: 10px;
   grid-area: content;
   text-align: center;
+  overflow: scroll;
     display: flex;
   flex-direction: column;
 	/* height : 540px;
@@ -95,6 +97,7 @@ div.page {
 /* LOGIN */
 
 input {
+  width: 100px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   text-align: center;
