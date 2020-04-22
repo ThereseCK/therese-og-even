@@ -36,43 +36,16 @@ function getMondayOfFirstWeekOfMonth(date) {
 }
 
 function createWeekHtml(monday) {
-    var dayCount = 7;
-    let html = '';
-
-    for (var i = 0; i < dayCount; i++) {
-        var date = addDays(monday, i);
-        var dayName = model.calender.days[date.getDay()];
-        // var appointmentsToday = getAppointments(date);
-        html += ` 
-                    <td class="weekday" onclick="dayDate()">
-                        <b> ${date.toLocaleDateString()}</b><br/>`;
-
-        for (item of model.categories) {
-            if (date.toLocaleDateString() == item.date) {
-                html += `<p><b>${item.color}</b></p>`
-            }
-
-        }
-
-
-        html += `</td>`;
-
-        //her! if admin cal. is chosen - show extra info here + +
-    }
-    return html;
+    return createMultipleDayHtml(monday, item => item.color);
 }
-
 
 function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
     document.getElementById('content').innerHTML = `  
             ${model.categories.filter(l => l.date === '2020-04-24').
             map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
-        }
-           
-            `;
+        }           
+    `;
 }
-
-
 
 function getMondayOfCurrentWeek() {
     var today = new Date();
@@ -81,9 +54,7 @@ function getMondayOfCurrentWeek() {
     return monday;
 }
 
-function addDays(date, dayCount) {
-    return new Date(date.getTime() + (dayCount * 24 * 60 * 60 * 1000));
-}
+
 
 function switchMonth(x) {
     model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 28);
