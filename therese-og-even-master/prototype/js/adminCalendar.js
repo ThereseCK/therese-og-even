@@ -5,9 +5,11 @@ function adminCalendar() {
         mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
     }
     document.getElementById('content').innerHTML = ` 
+    <div>
             <button class="weekCalendar" onclick="switchMonthAdmin(-1)">&lt;&lt;</button>
             <button class="weekCalendar">Uke</button>
             <button class="weekCalendar" onclick="switchMonthAdmin(+1)">&gt;&gt;</button> 
+</div>
 
 <table class="weekday">
     <tr>${weekLoopAdmin()}</tr>
@@ -17,7 +19,7 @@ function adminCalendar() {
     <tr>${createWeekHtmlAdmin(addDays(mondayMonthStart, 21))}</tr>
     <tr>${createWeekHtmlAdmin(addDays(mondayMonthStart, 28))}</tr>
         </table>
-        
+     
        
     
     <div class="week addButton"> + </div>
@@ -30,7 +32,7 @@ function weekLoopAdmin() {
 
 
 function createWeekHtmlAdmin(monday) {
-    createMultipleDayHtml(monday, item => item.name);
+  return  createMultipleDayHtml(monday, item => item.name);
 }
 
 function dayDateAdmin() {

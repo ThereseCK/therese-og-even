@@ -62,3 +62,4 @@ function switchMonth(x) {
     model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 28);
     userCalendar();
 }
+  

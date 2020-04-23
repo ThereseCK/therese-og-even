@@ -43,10 +43,11 @@ function infoChange(){
       
           ${categories
             .map(
-              cat => `
+              cat => `<div>
               <select  onclick="selectCategoryChange(${cat.id})">
           <option>${cat.name}</option>
           </select>
+          </div>
           `
             )
             .join("")} 
@@ -60,8 +61,10 @@ function infoChange(){
             id = null;
             model.selectedCategoryId = id;
             document.getElementById('content').innerHTML = `
+            <div>
             <input type="text" value="Endre informasjon"> </input>
-            <button>Endre</button>
+            <br><button>Endre</button>
+            </div>
         `;
        
       

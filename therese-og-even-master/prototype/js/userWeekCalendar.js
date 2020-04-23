@@ -11,13 +11,11 @@ document.getElementById('content').innerHTML = `<div>
 ${weekLoop()} <br>
 </tr>
 <tr>
-
 ${appointments(1)}
 ${appointments(2)}
 ${appointments(3)}
 ${appointments(4)}
 </tr>
-
 </table>
 `;
 }
@@ -37,7 +35,6 @@ function weekLoop(){
  let selectedWeeksDates = dayNos.map( dayNo => ` ${dateAsText(currentweekNo, dayNo)}`); 
     return dayNos.map( dayNo => `<th class="weekday">${model.calender.days[dayNo] } <br>
      ${dateAsText(currentweekNo, dayNo)}
-
     </th>
     `).join(' ')
     ;
