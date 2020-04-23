@@ -113,6 +113,7 @@ const model = {
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
+        
         timeSlot: 1,
       }
     },

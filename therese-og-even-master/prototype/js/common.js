@@ -9,10 +9,17 @@ function addDays(date, dayCount) {
     return new Date(date.getTime() + (dayCount * 24 * 60 * 60 * 1000));
 }
 
+
 function dateString(baseDate, index) {
     return addDays(baseDate, index).toISOString().substr(0,10);
 }
+function createWeekdayNamesHtml() {
+    return model.calender.days.map(d => ` 
+        <th class="weekday">${d}</th>
+        `).join(' ');
+        
 
+}
 function createMultipleDayHtml(baseDate, itemToText) {
     var dayCount = 7;
     const html = range(0, dayCount).map(i => `
@@ -23,6 +30,18 @@ function createMultipleDayHtml(baseDate, itemToText) {
             `).join('')}
         </td>
     `).join('');
+    return html;
+}
+
+function createMultipleDayWeekHtml(baseDate) {
+    var dayCount = 7;
+    const html = range(0, dayCount).map(i => `
+        <th class="weekday">
+${model.calender.days[i]}<br>
+            <b>${ dateString(baseDate, i)}</b><br/>
+            
+        
+   </th> `).join('');
     return html;
 }
 

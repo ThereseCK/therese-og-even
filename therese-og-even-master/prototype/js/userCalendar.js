@@ -1,7 +1,7 @@
 function userCalendar() {
     let mondayMonthStart = model.current.monthStartMonday;
     if (mondayMonthStart === null) {
-        mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
+        mondayMonthStart = model.current.monthStartMonday = getMondayOfCurrentWeek(new Date());
     }
     document.getElementById('content').innerHTML = `         
     <div>       
@@ -16,19 +16,15 @@ function userCalendar() {
         <tr>${createWeekHtml(addDays(mondayMonthStart, 14))}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 21))}</tr>
         <tr>${createWeekHtml(addDays(mondayMonthStart, 28))}</tr>
-    </table>
-    <br>
-    <p class="ccRed">Rød: Yoga</p>
-    <p class="ccBlue">Blå: Events</p>
-    <p class="ccGreen">Grønn: Sessions</p>
-    `;
-}
+        </table>
+        <br>
+        <p class="ccRed">Rød: Yoga</p>
+        <p class="ccBlue">Blå: Events</p>
+        <p class="ccGreen">Grønn: Sessions</p>
+        `;
+    }
 
-function createWeekdayNamesHtml() {
-    return model.calender.days.map(d => ` 
-        <th class="weekday">${d}</th>
-        `).join(' ');
-}
+
 
 function getMondayOfFirstWeekOfMonth(date) {
     while (date.getDate() >= 7) {
@@ -43,7 +39,7 @@ function createWeekHtml(monday) {
 
 function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
     document.getElementById('content').innerHTML = `  
-            ${model.categories.filter(l => l.date === '2020-04-24').
+            ${model.categories.filter(l => l.date === '2020-05-24').
             map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
         }           
     `;
@@ -51,7 +47,7 @@ function dayDate() { //det er her lista over dagens events   - sende med påklik
 
 function getMondayOfCurrentWeek() {
     var today = new Date();
-    var diffToMonday = 2 - today.getDay();
+    var diffToMonday =  1- today.getDay();
     var monday = addDays(today, diffToMonday);
     return monday;
 }
