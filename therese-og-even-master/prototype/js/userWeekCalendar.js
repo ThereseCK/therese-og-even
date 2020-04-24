@@ -41,25 +41,25 @@ function appointments(timeSlot, categories) {
             `
             <td class="weekday">
            
-            ${dateAsText(model.calender.currentWeek, dayNo)}
-
-                    ${eventsFromDayAndTime(model.calender.currentWeek, dayNo, timeSlot,).map(c => `
-                  
-                     
-                        ${model.categories.name}
-                        <button class="calendarButton"> Meld på</button>   
-                    <br>
-                    `).join('')}
-               
+            
+            ${eventsFromDayAndTime(model.calender.currentWeek, dayNo, timeSlot,).map(c => `
+            
+            
+            ${model.categories.name}
+            <button class="calendarButton"> Meld på</button>   
+            <br>
+            `).join('')}
+            
             </td>`).join('')}
             </tr>`;
             
-}
-function dateAsText(baseDateTxt, dayCount){
-    const baseDateMillis = new Date(baseDateTxt).getTime();
-    const date = new Date(baseDateMillis+1000*60*60*24*dayCount);
-    return date.toLocaleDateString();
-}
+          }
+          // ${dateAsText(model.calender.currentWeek, dayNo)}
+// function dateAsText(baseDateTxt, dayCount){
+//     const baseDateMillis = new Date(baseDateTxt).getTime();
+//     const date = new Date(baseDateMillis+1000*60*60*24*dayCount);
+//     return date.toLocaleDateString();
+// }
 
 function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
   const baseDateMillis = new Date(baseDateTxt).getTime();
