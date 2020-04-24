@@ -25,7 +25,7 @@ function createMultipleDayHtml(baseDate, itemToText) {
     const html = range(0, dayCount).map(i => `
         <td class="weekday" onclick="dayDate()">
             <b>${ dateString(baseDate, i)}</b><br/>
-            ${model.categories.filter(item => dateString(baseDate, i) == item.date).map(item => `
+            ${model.categories.filter(item => dateString(baseDate,  i) == item.date).map(item => `
                 <p><b>${itemToText(item)}</b></p>
             `).join('')}
         </td>

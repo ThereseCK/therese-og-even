@@ -7,7 +7,7 @@ const model = {
   logInSession: "Bruker",
   calender: {
     ukepiltastForward: 0,
-    currentWeek: null,  
+    currentWeek: '2020-04-20',  
     days: [
       "Mandag",
       "Tirsdag",
@@ -212,7 +212,7 @@ const model = {
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
       time: {
-        timeslot: 4,
+        timeSlot: 4,
       }
     },
   ],

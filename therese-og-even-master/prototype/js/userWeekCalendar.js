@@ -34,53 +34,52 @@ function createWeekCalendarHtml(monday) {
 
 function appointments(timeSlot, categories) {
 
-    const dayNos = Array.from(model.calender.days.keys());
-    
-    return `
-        <tr><th class="weekday">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
-            `
-            <td class="weekday">
-           
-            
-            ${eventsFromDayAndTime(model.calender.currentWeek, dayNo, timeSlot,).map(c => `
-            
-            
-            ${model.categories.name}
-            <button class="calendarButton"> Meld på</button>   
-            <br>
-            `).join('')}
-            
-            </td>`).join('')}
-            </tr>`;
-            
-          }
-          // ${dateAsText(model.calender.currentWeek, dayNo)}
-// function dateAsText(baseDateTxt, dayCount){
-//     const baseDateMillis = new Date(baseDateTxt).getTime();
-//     const date = new Date(baseDateMillis+1000*60*60*24*dayCount);
-//     return date.toLocaleDateString();
-// }
+  const dayNos = Array.from(model.calender.days.keys());
+  
+  return `
+      <tr><th class="weekday">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
+          `
+          <td class="weekday">
+         
+          
+          ${eventsFromDayAndTime(model.current.week, dayNo,  timeSlot,).map(c => `
+          
+          
+          ${c.name}<br>
+          <button class="calendarButton"> Meld på</button>   
+          <br>
+          `).join('')}
+          
+          </td>`).join('')}
+          </tr>`;
+          
+        }
+
 
 function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
-  const baseDateMillis = new Date(baseDateTxt).getTime();
-  const date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
+  let baseDateMillis = new Date(baseDateTxt).getTime();
+  let date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
     .toISOString()
     .substr(0, 10);
+    console.log(model.categories.filter(
+      (categories) =>
+      categories.date === date && categories.time.timeSlot === timeSlot
+      ))
     return model.categories.filter(
         (categories) =>
         categories.date === date && categories.time.timeSlot === timeSlot
         );
     }
-    
 
 function switchWeek(x) {
  model.current.week = addDays(
     model.current.week,
     x * 7
   );
-  console.log(x)
   if (x == "1") model.calender.ukepiltastForward++;
   if (x == "-1") model.calender.ukepiltastForward--;
+
+
   
   weekCalendar();
 }
