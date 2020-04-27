@@ -7,7 +7,7 @@ function adminCalendar() {
     document.getElementById('content').innerHTML = ` 
     <div>
             <button class="weekCalendar" onclick="switchMonthAdmin(-1)">&lt;&lt;</button>
-            <button class="weekCalendar">Uke</button>
+            <button onclick="adminWeekCalender()" class="weekCalendar">Uke</button>
             <button class="weekCalendar" onclick="switchMonthAdmin(+1)">&gt;&gt;</button> 
 </div>
 
@@ -25,6 +25,7 @@ function adminCalendar() {
     <div class="week addButton"> + </div>
     `;
 }
+
 
 function weekLoopAdmin() {
     return model.calender.days.map(n => `<th class="weekday">${n}</th>`).join(' ');

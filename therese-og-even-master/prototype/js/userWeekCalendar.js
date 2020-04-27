@@ -78,9 +78,6 @@ function switchWeek(x) {
   );
   if (x == "1") model.calender.ukepiltastForward++;
   if (x == "-1") model.calender.ukepiltastForward--;
-
-
-  
   weekCalendar();
 }
 

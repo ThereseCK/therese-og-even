@@ -76,7 +76,7 @@ div.page {
 }
 .calendarButton{
   font-size: 8px;
-  width: 30px;
+  width: auto;
 
 }
 .ccRed{

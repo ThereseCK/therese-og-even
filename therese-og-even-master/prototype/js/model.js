@@ -194,7 +194,7 @@ const model = {
       date: '2020-05-01',
       price: 1500,
       maxParticipants: 1,
-      currentParticipants: 1,
+      currentParticipants: 1, //7,5
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
       time: {
@@ -208,7 +208,7 @@ const model = {
       date: '2020-04-25',
       price: 1500,
       maxParticipants: 1,
-      currentParticipants: 1,
+      currentParticipants: 1,   // step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
       time: {
@@ -223,9 +223,9 @@ const model = {
     error: null,
     isAdmin: false
   },
-  users: [
+  users: [   //step 3: løkke med if inni - matcher id'en til denne useren til en av de i current participants? isåfall print ut navn
     {
-      id: "even",
+      id: 1,   
       name: "Even Vågen",
       password: "passord",
       adress: "Skien",
@@ -235,7 +235,7 @@ const model = {
       category: 2
     },
     {
-      id: "therese",
+      id: 2,
       name: "Therese Nordnes",
       password: "lol",
       adress: "Verningen",
@@ -247,6 +247,7 @@ const model = {
   ],
 
   newUser: {
+    id: 0,       // step 1: autoid for hver bruker - sjekk length til allerede registrerte users og pluss på 1 - i pushen til users
     name: "",
     username: "",
     email: "",
