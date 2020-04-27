@@ -8,9 +8,9 @@ function adminWeekCalender(){
         }
       
         document.getElementById("content").innerHTML = `<div>
-      <button class="weekCalendar" onclick="switchWeek(-1)">&lt;&lt;</button>
+      <button class="weekCalendar" onclick="switchWeekAdmin(-1)">&lt;&lt;</button>
       <button class="weekCalendar" onclick="adminCalendar()">Måned</button>
-      <button class="weekCalendar" onclick="switchWeek(+1)">&gt;&gt;</button>
+      <button class="weekCalendar" onclick="switchWeekAdmin(+1)">&gt;&gt;</button>
       </div>
       <table class="weekday">
       <tr>
@@ -70,7 +70,7 @@ function adminWeekCalender(){
               );
           }
       
-      function switchWeek(x) {
+      function switchWeekAdmin(x) {
        model.current.week = addDays(
           model.current.week,
           x * 7
