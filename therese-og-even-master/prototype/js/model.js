@@ -35,40 +35,40 @@ const model = {
       "Desember"
     ],
     currentEventView: ["monthly", "weekly", "daily"],
-    courses: [
-      {
-        id: 1,
-        name: "Vår-yin",
-        date: "2020-05-01",
-        maxParticipants: 10,
-        participants: ["even", "therese"],
-        category: 1
-      },
-      {
-        id: 2,
-        name: "Yin",
-        date: "2020-04-01",
-        maxParticipants: 15,
-        participants: ["even", "therese"],
-        category: 1
-      },
-      {
-        id: 3,
-        name: "Midnattsyogaevent",
-        date: "2020-05-02",
-        maxParticipants: 5,
-        participants: [],
-        category: 2
-      },
-      {
-        id: 4,
-        name: "Veileding",
-        date: "2020-05-05",
-        maxParticipants: 1,
-        participants: ['Even'],
-        category: 3
-      }
-    ]
+    // courses: [
+    //   {
+    //     id: 1,
+    //     name: "Vår-yin",
+    //     date: "2020-05-01",
+    //     maxParticipants: 10,
+    //     participants: ["even", "therese"],
+    //     category: 1
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Yin",
+    //     date: "2020-04-01",
+    //     maxParticipants: 15,
+    //     participants: ["even", "therese"],
+    //     category: 1
+    //   },
+    //   {
+    //     id: 3,
+    //     name: "Midnattsyogaevent",
+    //     date: "2020-05-02",
+    //     maxParticipants: 5,
+    //     participants: [],
+    //     category: 2
+    //   },
+    //   {
+    //     id: 4,
+    //     name: "Veileding",
+    //     date: "2020-05-05",
+    //     maxParticipants: 1,
+    //     participants: ['Even'],
+    //     category: 3
+    //   }
+    // ]
   },
 
   menuOptions: [
@@ -76,7 +76,7 @@ const model = {
     { id: 3, functionName: "showInfo", txt: "Informasjon", onlyForAdmin: false },
     { id: 4, functionName: "userCalendar", txt: "Kalender & Booking", onlyForAdmin: false },
     { id: 2, functionName: "showLogIn", txt: "Logg inn", onlyForAdmin: false },
-    { id: 1, functionName: "profil", txt: "&#128100;", onlyForAdmin: false },
+    { id: 1, functionName: "userProfil", txt: "&#128100;", onlyForAdmin: false },
     { id: 6, functionName: "logOut", txt: "Logg Ut", onlyForAdmin: true },
     {
       id: 7,
@@ -99,7 +99,7 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-    { id: 1, name: "Yoga", category: null, info: '', color: null },
+    { id: 1, name: "Yoga", category: null, info: '', color: null, },
     { id: 2, name: "Event", category: null, info: '' },
     { id: 3, name: "Session", category: null, info: '' },
     {
@@ -110,6 +110,7 @@ const model = {
       price: 1500,
       maxParticipants: 15,
       currentParticipants: 5,
+      participants: [1,2],
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
@@ -187,20 +188,7 @@ const model = {
         timeSlot: 3,
       }
     },
-    {
-      id: 10,
-      name: "Yoga",
-      info: "yoga",
-      date: '2020-05-01',
-      price: 1500,
-      maxParticipants: 1,
-      currentParticipants: 1, //7,5
-      category: 3,
-      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
-      time: {
-        timeSlot: 3,
-      }
-    },
+    
     {
       id: 11,
       name: "Yoga",
@@ -257,3 +245,4 @@ const model = {
     complete: true,
   }
 };
+
