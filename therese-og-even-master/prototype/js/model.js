@@ -109,8 +109,8 @@ const model = {
       date: '2020-03-24',
       price: 1500,
       maxParticipants: 15,
-      currentParticipants: 5,
-      participants: [1,2],
+      currentParticipants: 2,
+      participants: [1, 2],
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
