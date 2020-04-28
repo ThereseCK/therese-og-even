@@ -50,7 +50,11 @@ div.page {
 
 /* Kalender */
 
-
+select{
+  margin: 10px;
+  width: 150px;
+  
+}
 .weekday{
   overflow: hidden;
   border: 1px solid rgb(159, 185, 159);
@@ -97,6 +101,7 @@ div.page {
 /* LOGIN */
 
 input {
+  margin-top: 10px;
   width: 150px;
   padding-bottom: 15px;
   margin-bottom: 15px;

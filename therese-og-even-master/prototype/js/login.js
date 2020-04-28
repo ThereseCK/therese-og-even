@@ -26,9 +26,12 @@ function createUser() {
     </div>`;
 }
 
+submitNewUser();
   function submitNewUser() {
-    // for(i = 0; i < model.users.length; i++)
-
-  }
-
+    let mapTest = model.users.map(n => n.id);
+    for(i = 3; i < 20; i++){
+      // console.log(mapTest.push(i))
+      // console.log(mapTest)
+    }
+}
 

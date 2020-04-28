@@ -22,7 +22,7 @@ function adminCalendar() {
      
        
     
-    <div class="week addButton"> + </div>
+    <div class="week addButton" onclick="addButton()"> + </div>
     `;
 }
 

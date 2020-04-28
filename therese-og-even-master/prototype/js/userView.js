@@ -64,8 +64,10 @@ function selectCategory(id) {
 }
 
 function initMenu() {
+  let edittext = model.menuOptions.map(n => n.loggedInn);
+  let loggedInOrNot = edittext == true ? 'Logg Ut' : "Logg Inn" ;
   for (element of model.menuOptions) {
-    if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
+    if (model.logInSession == "Bruker" && element.onlyForAdmin == false && loggedInOrNot) {
       document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
                              onclick="${element.functionName}()"> ${element.txt}
                              
@@ -81,7 +83,7 @@ function home() {
   <img src="hol2.jpg"  height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
   </div>
   <hr>
-  <p>Er dette riktig fil?</p>
+  
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <br>

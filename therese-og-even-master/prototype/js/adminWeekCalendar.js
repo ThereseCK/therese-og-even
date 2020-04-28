@@ -26,7 +26,7 @@ function adminWeekCalender(){
       ${appointmentsAdmin(4)}
       </tr>
       </table>
-      <div class="week addButton"> + </div>
+      <div class="week addButton" onclick="addButton()"> + </div>
       `;
       }
       

@@ -29,3 +29,16 @@ function test() {
         userProfil();
     }
 }
+
+function userJoinSession(){
+    document.getElementById('content').innerHTML = `
+    <br>
+    <div>
+    Du er nå meldt på:<br>
+    navn:<br><br>
+    klokka:<br><br>
+    <b>Husk yogamatte!<b>
+    <p style="color: green;">Vipps 150kr til 900 00 000</p>
+   </div>
+    `;
+}

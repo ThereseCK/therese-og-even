@@ -13,16 +13,24 @@ function adminMenu() {
 
 function adminMainPage() {
   adminMenu();
-  document.getElementById("content").innerHTML = "";
+  // let appointmentsAdmin = model.calender.timeSlots.map(n => `<ul>${n}</ul>`).join('');
+  const date = new Date();
+  
+ 
+  document.getElementById("content").innerHTML = `
+  <h1>Dagens oversikt</h1>
+  `
+ ;
 
   model.logInSession = "Admin";
- 
 }
+
 
 function logOut() {
   document.getElementById("navbar").innerHTML = "";
   document.getElementById("content").innerHTML = "";
   model.logInSession = "Bruker";
+  home();
   initMenu();
 }
 

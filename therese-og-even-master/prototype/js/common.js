@@ -50,4 +50,21 @@ let todaysDate = new Date();
     let onejan = new Date(todaysDate.getFullYear(), 0, 1);
     let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 )
 
-
+function addButton(){
+    let timeSlot = model.calender.timeSlots.map(n => `<option>${n}</option>`).join(' ');
+    let yogaEvents = model.categories.filter(n => n.category === null)
+    .map(n => `<option>${n.name}</option>`).join('');
+   document.getElementById('content').innerHTML = `<div>
+   <select> 
+   ${yogaEvents}
+   </select><br>
+   <select> 
+   ${timeSlot}
+   </select><br>
+   <input type="date"></input><br>
+   <input type="text" value="Navn på event"></input> <br>
+   <input type="text" value="informasjon"></input><br>
+    <button>Bekreft</button>
+   </div>
+   `; 
+}

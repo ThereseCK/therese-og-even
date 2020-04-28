@@ -75,7 +75,8 @@ const model = {
     { id: 5, functionName: "home", txt: "&#127968;", onlyForAdmin: false },
     { id: 3, functionName: "showInfo", txt: "Informasjon", onlyForAdmin: false },
     { id: 4, functionName: "userCalendar", txt: "Kalender & Booking", onlyForAdmin: false },
-    { id: 2, functionName: "showLogIn", txt: "Logg inn", onlyForAdmin: false },
+    { id: 2, functionName: "showLogIn", txt: "Logg inn", onlyForAdmin: false, loggedInn: false},
+    {id: 9, functionName: "showLogOut", txt : "Logg ut", onlyForAdmin: false, loggedInn: true },
     { id: 1, functionName: "userProfil", txt: "&#128100;", onlyForAdmin: false },
     { id: 6, functionName: "logOut", txt: "Logg Ut", onlyForAdmin: true },
     {
@@ -122,7 +123,7 @@ const model = {
       id: 5,
       name: "Manneyoga",
       info: "Dette er en behagelig øvelse som passer for menn",
-      date: '2020-04-14',
+      date: '2020-04-28',
       price: 2000,
       maxParticipants: 10,
       currentParticipants: 2,
@@ -136,7 +137,7 @@ const model = {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-      date: '2020-05-05',
+      date: '2020-04-28',
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
@@ -213,7 +214,7 @@ const model = {
   },
   users: [   //step 3: løkke med if inni - matcher id'en til denne useren til en av de i current participants? isåfall print ut navn
     {
-      id: 1,   
+      id: 0,   
       name: "Even Vågen",
       password: "passord",
       adress: "Skien",
@@ -223,12 +224,22 @@ const model = {
       category: 2
     },
     {
-      id: 2,
+      id: 1,
       name: "Therese Nordnes",
       password: "lol",
       adress: "Verningen",
       phone: "87654321",
       email: "hade@hotmail.com",
+      isAdmin: false,
+      category: 1
+    },
+    {
+      id: 2,
+      name: "Ola Nordmann",
+      password: "o",
+      adress: "skogen",
+      phone: "25364758",
+      email: "p",
       isAdmin: false,
       category: 1
     }

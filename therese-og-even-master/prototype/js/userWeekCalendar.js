@@ -33,6 +33,7 @@ function createWeekCalendarHtml(monday) {
 }
 
 function appointments(timeSlot, categories) {
+  let disabledOrNot = model.login.loggedInUser == null ? 'disabled' : "" ;
 
   const dayNos = Array.from(model.calender.days.keys());
   
@@ -46,7 +47,7 @@ function appointments(timeSlot, categories) {
           
           
           ${c.name}<br>
-          <button class="calendarButton"> Meld på</button>   
+          <button class="calendarButton" onclick="userJoinSession()" ${disabledOrNot}> Meld på</button>   
           <br>
           `).join('')}
           
