@@ -30,6 +30,8 @@ function test() {
     }
 }
 
+
+
 function userJoinSession(){
     document.getElementById('content').innerHTML = `
     <br>

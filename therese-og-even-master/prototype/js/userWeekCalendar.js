@@ -32,7 +32,7 @@ function createWeekCalendarHtml(monday) {
   return createMultipleDayWeekHtml(monday);
 }
 
-function appointments(timeSlot, categories) {
+function appointments(timeSlot) {
   let disabledOrNot = model.login.loggedInUser == null ? 'disabled' : "" ;
 
   const dayNos = Array.from(model.calender.days.keys());

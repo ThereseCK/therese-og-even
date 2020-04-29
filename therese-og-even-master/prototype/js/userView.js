@@ -12,7 +12,7 @@ function showInfo() {
   )[0];
   if (selectedCategory) {
     const catName = categories.map(b => b.name).join(" ");
-    const info = categories.map(n => n.info).join(" ");
+    const info = categories.map(n => `${n.info}`).join(" ");
 
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
@@ -20,17 +20,17 @@ function showInfo() {
 
     categories.push({
       id: selectedCategory.category,
-      name: "Tilbake",
+      name: `<p class="goBack">⇦</p>`,
       info: ""
     });
-    categories.push({ id: null, name: "Alle toppkategorier" });
+    categories.push({ id: null, name: `<p class="goBack">↞</p>` });
   }
 
   const courses = model.categories.filter(
     cat => cat.category === categoryId
   );
   document.getElementById("content").innerHTML = `
-     <h2>Kategorier</h2>
+    <div> <h2>Kategorier</h2> 
      <ul>
         ${categories
           .map(
@@ -44,16 +44,16 @@ function showInfo() {
         <hr>
       ${test}  
       <br>      
-        <h2>Kommende Kurs</h2>
+        <h2>Kommende</h2>
     <ul>
     ${courses
       .map(
         course => `
-        ${course.name} <br> ${course.date}   
+       <br> <b>${course.name}</b> <br> <tt>✦</tt> ${course.date}  <br>
         `
       )
       .join("")}
-        </ul>             
+        </ul>   </div>          
         
         `;
 }
@@ -67,12 +67,16 @@ function initMenu() {
   // let edittext = model.menuOptions.map(n => n.loggedInn);
   // let edittext2 = model.menuOptions.map(n => n.txt);
   // let loggedInOrNot = edittext == true ? 'Logg Ut' : "Logg Inn" ;
+  document.getElementById("navbar").innerHTML = "";
+  
+
   for (element of model.menuOptions) {
     if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
       document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
                              onclick="${element.functionName}()"> ${element.txt}
                              
                             </button>`;
+                            //vise log in om ikkelogget inn vise logg ut om logget in
     }
   }
 }

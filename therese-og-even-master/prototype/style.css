@@ -26,7 +26,7 @@ div.page {
 #navbar {
   grid-area: navbar;
   /* overflow: hidden; */
-  /* background-color: palegoldenrod; */
+  /* background-color: rgb(173, 191, 186);  */
   text-align: center;
   /* z-index: 1; */
 }
@@ -131,4 +131,8 @@ input {
     margin-bottom: 5px;
     
     
+  }
+
+  p.goBack{
+  color: black;
   }

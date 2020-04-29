@@ -1,4 +1,5 @@
 function showLogIn() {
+  model.userLoggedInn = true;
     let loginHTML = `<div>
       <input type="text" oninput="model.login.usernameEntry=this.value" value="Brukernavn"> </input> <br>
       <input type="text" oninput="model.login.passwordEntry=this.value" value="Passord"> </input> <br>
@@ -12,6 +13,11 @@ function showLogIn() {
   }
 
   
+function showLogOut(){
+  userLoggedInn = false;
+  home();
+}
+
 function createUser() {
   document.getElementById("content").innerHTML = `
     <div>
