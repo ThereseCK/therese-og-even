@@ -62,10 +62,7 @@ function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
   let date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
     .toISOString()
     .substr(0, 10);
-    console.log(model.categories.filter(
-      (categories) =>
-      categories.date === date && categories.time.timeSlot === timeSlot
-      ))
+    
     return model.categories.filter(
         (categories) =>
         categories.date === date && categories.time.timeSlot === timeSlot

@@ -12,7 +12,7 @@ function showInfo() {
   )[0];
   if (selectedCategory) {
     const catName = categories.map(b => b.name).join(" ");
-    const info = categories.map(n => `${n.info}`).join(" ");
+    const info = categories.map(n => n.info).join(" ");
 
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
@@ -30,8 +30,8 @@ function showInfo() {
     cat => cat.category === categoryId
   );
   document.getElementById("content").innerHTML = `
-    <div> <h2>Kategorier</h2> 
-     <ul>
+    <div> 
+     
         ${categories
           .map(
             cat => `<div>
@@ -40,12 +40,12 @@ function showInfo() {
         `
           )
           .join("")} 
-        </ul> 
+        
         <hr>
       ${test}  
       <br>      
         <h2>Kommende</h2>
-    <ul>
+   
     ${courses
       .map(
         course => `
@@ -53,7 +53,7 @@ function showInfo() {
         `
       )
       .join("")}
-        </ul>   </div>          
+           </div>          
         
         `;
 }
