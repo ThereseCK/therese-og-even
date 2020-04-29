@@ -64,10 +64,11 @@ function selectCategory(id) {
 }
 
 function initMenu() {
-  let edittext = model.menuOptions.map(n => n.loggedInn);
-  let loggedInOrNot = edittext == true ? 'Logg Ut' : "Logg Inn" ;
+  // let edittext = model.menuOptions.map(n => n.loggedInn);
+  // let edittext2 = model.menuOptions.map(n => n.txt);
+  // let loggedInOrNot = edittext == true ? 'Logg Ut' : "Logg Inn" ;
   for (element of model.menuOptions) {
-    if (model.logInSession == "Bruker" && element.onlyForAdmin == false && loggedInOrNot) {
+    if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
       document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
                              onclick="${element.functionName}()"> ${element.txt}
                              
