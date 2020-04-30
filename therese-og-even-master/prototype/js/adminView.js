@@ -13,13 +13,14 @@ function adminMenu() {
 
 function adminMainPage() {
   adminMenu();
-  // let appointmentsAdmin = model.calender.timeSlots.map(n => `<ul>${n}</ul>`).join('');
-  const date = new Date();
+ 
   
  
   document.getElementById("content").innerHTML = `
   <h1>Dagens oversikt</h1>
+
   `
+  
  ;
 
   model.logInSession = "Admin";

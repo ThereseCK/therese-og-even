@@ -2,7 +2,7 @@ function adminCalendar() {
     document.getElementById('content').innerHTML = "";
     let mondayMonthStart = model.current.monthStartMonday;
     if (mondayMonthStart === null) {
-        mondayMonthStart = model.current.monthStartMonday = getMondayOfFirstWeekOfMonth(new Date());
+        mondayMonthStart = model.current.monthStartMonday = getMondayOfCurrentWeek(new Date());
     }
     document.getElementById('content').innerHTML = ` 
     <div>
@@ -33,19 +33,40 @@ function weekLoopAdmin() {
 
 
 function createWeekHtmlAdmin(monday) {
-  return  createMultipleDayHtml(monday, item => item.name);
+  return  createMultipleDayHtmlAdmin(monday, item => item.name);
 }
 
-function dayDateAdmin() {
-    document.getElementById('content').innerHTML = `  
-    ${model.categories.filter(l => l.date === '2020-04-24').
-            map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br> Deltagere: ${n.currentParticipants}</ul>`).join(' ')
-        }
-   
-    `;
-}
+
 function switchMonthAdmin(deltaWeek) {
     model.current.monthStartMonday = addDays(model.current.monthStartMonday, deltaWeek * 28);
     adminCalendar();
+}
+function dayDateAdmin(timeSlot){
+    let timeslotString = timeSlot.innerHTML.toString();
+    let dateFromClick = timeslotString.slice(16, 26);
+    
+    document.getElementById('content').innerHTML = `
+${dateFromClick}    
+`; 
+    
+    for(event of model.categories){
+        if(event.date == dateFromClick){
+            for(timeSlot in event.time){
+                let timeSlotInCurrent = event.time[timeSlot];
+                let timesFromTimeslotArray = model.calender.timeSlots[timeSlotInCurrent];
+                document.getElementById('content').innerHTML += '<br>' + timesFromTimeslotArray + '</br>';
+            }
+            document.getElementById('content').innerHTML +=` <br>
+           <br>${event.currentParticipants} / ${event.maxParticipants}  <br>
+           ${event.name} <br>
+            <div><button class="navbarButton" style="width: 100px;" > Påmeldte: </button></div>
+            `;
+            
+            //if(isAdmin == true) legg til mer stæsj i inner'n B)
+           
+           
+        }
+    }
+   
 }
 

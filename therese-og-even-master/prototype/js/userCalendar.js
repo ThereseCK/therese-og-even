@@ -34,16 +34,46 @@ function userCalendar() {
 // }
 
 function createWeekHtml(monday) {
+    
     return createMultipleDayHtml(monday, item => item.color);
+ 
 }
 
-function dayDate() { //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
-    document.getElementById('content').innerHTML = `  
-            ${model.categories.filter(l => l.date === '2020-05-24').
-            map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
-        }           
-    `;
+function dayDate(timeSlot) { 
+    //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
+    let timeslotString = timeSlot.innerHTML.toString();
+    let dateFromClick = timeslotString.slice(16, 26);
+    let disabledOrNot = model.login.loggedInUser == null ? 'disabled' : "" ;
+    
+    document.getElementById('content').innerHTML = `
+${dateFromClick}    
+`; 
+    
+    for(event of model.categories){
+        if(event.date == dateFromClick){
+            for(timeSlot in event.time){
+                let timeSlotInCurrent = event.time[timeSlot];
+                let timesFromTimeslotArray = model.calender.timeSlots[timeSlotInCurrent];
+                document.getElementById('content').innerHTML += '</br>' + timesFromTimeslotArray;
+            }
+            document.getElementById('content').innerHTML +=` <br>
+            ${event.name}<br>
+            <div><button class="navbarButton" style="width: 100px;" onclick="userJoinSession" ${disabledOrNot}> Meld på </button> <div> 
+            
+            `;
+            
+            //if(isAdmin == true) legg til mer stæsj i inner'n B)
+           
+        }
+    }
+   
 }
+
+// `  
+//             ${model.categories.filter(l => l.date === '2020-05-24').
+//             map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
+//         }           
+//     `;
 
 function getMondayOfCurrentWeek() {
     var today = new Date();
