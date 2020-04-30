@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0; 
+  padding: 10px; 
   border: solid gold 5px;
 
   /* GRID */
@@ -75,6 +75,13 @@ select{
 }
 .weekCalendar{
   width: 100px;
+  margin: 20px;
+  background-color: rgb(173, 191, 186); 
+  color: darkslategrey;
+}
+.weekCalendarBTN{
+  width: 100px;
+  margin: 6px;
   margin-bottom: 10px;
   background-color: rgb(173, 191, 186); 
   color: darkslategrey;

@@ -1,6 +1,11 @@
 // function range(from, to) {
-//     return Array.from(Array(to - from).keys()).map(n => n + from);
-// }
+    //     return Array.from(Array(to - from).keys()).map(n => n + from);
+    // }
+    
+    //variabler:
+    let todaysDate = new Date();
+        let onejan = new Date(todaysDate.getFullYear(), 0, 1);
+        let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 )
 
 const range = (from, to) => Array.from(Array(to - from).keys()).map(n => n + from);
 
@@ -44,11 +49,6 @@ ${model.calender.days[i]}<br>
    </th> `).join('');
     return html;
 }
-
-//variabler:
-let todaysDate = new Date();
-    let onejan = new Date(todaysDate.getFullYear(), 0, 1);
-    let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 )
 
 function addButton(){
     let timeSlot = model.calender.timeSlots.map(n => `<option>${n}</option>`).join(' ');

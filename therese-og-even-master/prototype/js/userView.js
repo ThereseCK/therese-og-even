@@ -88,11 +88,6 @@ function home() {
   <img src="hol2.jpg"  height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
   </div>
   <hr>
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 226c8cd43e01dc0e6dac8cbfb90c95772a7eda3d
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <br>

@@ -8,9 +8,9 @@ function adminWeekCalender(){
   }
 
   document.getElementById("content").innerHTML = `<div>
-<button class="weekCalendar" onclick="switchWeekAdmin(-1)">&lt;&lt;</button>
-<button class="weekCalendar" onclick="adminCalendar()">Måned</button>
-<button class="weekCalendar" onclick="switchWeekAdmin(+1)">&gt;&gt;</button>
+<button class="weekCalendarBTN" onclick="switchWeekAdmin(-1)">&lt;&lt;</button>
+<button class="weekCalendarBTN" onclick="adminCalendar()">Måned</button>
+<button class="weekCalendarBTN" onclick="switchWeekAdmin(+1)">&gt;&gt;</button>
 </div>
 <table class="weekday">
 <tr>
@@ -44,11 +44,7 @@ function appointmentsAdmin(timeSlot) {
           <td class="weekday">
          
           
-<<<<<<< HEAD
           ${eventsFromDayAndTime(model.current.week, dayNo, timeSlot,).map(c => `
-=======
-          ${eventsFromDayAndTime(model.current.week, dayNo,  timeSlot,).map(c => `
->>>>>>> 226c8cd43e01dc0e6dac8cbfb90c95772a7eda3d
           
           
           ${c.name}<br>
@@ -63,16 +59,17 @@ function appointmentsAdmin(timeSlot) {
         }
 
 
-function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
-  let baseDateMillis = new Date(baseDateTxt).getTime();
-  let date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
-    .toISOString()
-    .substr(0, 10);
-    return model.categories.filter(
-        (categories) =>
-        categories.date === date && categories.time.timeSlot === timeSlot
-        );
-    }
+        function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
+          let baseDateMillis = new Date(baseDateTxt).getTime();
+          let date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
+            .toISOString()
+            .substr(0, 10);
+            return model.categories.filter(
+                (categories) =>
+                categories.date === date && categories.time.timeSlot === timeSlot
+                );
+            }
+      
 
 function switchWeekAdmin(x) {
  model.current.week = addDays(

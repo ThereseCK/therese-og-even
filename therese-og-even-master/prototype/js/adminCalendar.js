@@ -6,9 +6,9 @@ function adminCalendar() {
     }
     document.getElementById('content').innerHTML = ` 
     <div>
-            <button class="weekCalendar" onclick="switchMonthAdmin(-1)">&lt;&lt;</button>
-            <button onclick="adminWeekCalender()" class="weekCalendar">Uke</button>
-            <button class="weekCalendar" onclick="switchMonthAdmin(+1)">&gt;&gt;</button> 
+            <button class="weekCalendarBTN" onclick="switchMonthAdmin(-1)">&lt;&lt;</button>
+            <button onclick="adminWeekCalender()" class="weekCalendarBTN">Uke</button>
+            <button class="weekCalendarBTN" onclick="switchMonthAdmin(+1)">&gt;&gt;</button> 
 </div>
 
 <table class="weekday">

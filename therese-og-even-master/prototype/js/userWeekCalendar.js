@@ -7,9 +7,9 @@ function weekCalendar() {
   }
 
   document.getElementById("content").innerHTML = `<div>
-<button class="weekCalendar" onclick="switchWeek(-1)">&lt;&lt;</button>
-<button class="weekCalendar" onclick="userCalendar()">Måned</button>
-<button class="weekCalendar" onclick="switchWeek(+1)">&gt;&gt;</button>
+<button class="weekCalendarBTN" onclick="switchWeek(-1)">&lt;&lt;</button>
+<button class="weekCalendarBTN" onclick="userCalendar()">Måned</button>
+<button class="weekCalendarBTN" onclick="switchWeek(+1)">&gt;&gt;</button>
 </div>
 <table class="weekday">
 <tr>

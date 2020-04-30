@@ -5,9 +5,9 @@ function userCalendar() {
     }
     document.getElementById('content').innerHTML = `         
     <div>       
-        <button class="weekCalendar" onclick="switchMonth(-1)">&lt;&lt;</button>
-        <button class="weekCalendar" onclick="weekCalendar()">Uke</button>
-        <button class="weekCalendar" onclick="switchMonth(+1)">&gt;&gt;</button> 
+        <button class="weekCalendarBTN" onclick="switchMonth(-1)">&lt;&lt;</button>
+        <button class="weekCalendarBTN" onclick="weekCalendar()">Uke</button>
+        <button class="weekCalendarBTN" onclick="switchMonth(+1)">&gt;&gt;</button> 
     </div>
     <table class="weekday">
        <tr> ${createWeekdayNamesHtml()}</tr>

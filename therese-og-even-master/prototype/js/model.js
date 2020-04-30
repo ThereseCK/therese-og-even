@@ -65,15 +65,51 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-<<<<<<< HEAD
-    { id: 1, name: "Yoga", category: null, info: '', date: '2020-05-03', color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,},
-    { id: 2, name: "Event", category: null, info: '', date: '2020-06-22', color: `<p style="color: blue; font-size:20px; float:left;">.</p>`},
-    { id: 3, name: "Session", category: null, info: '', date: '2020-07-07', color: `<p style="color: green; font-size:20px; float:left;">.</p>` },
-=======
-    { id: 1, name: "Yoga", category: null, info: '', date: '2020-05-03', },
-    { id: 2, name: "Event", category: null, info: '', date: '2020-06-22' },
-    { id: 3, name: "Session", category: null, info: '', date: '2020-07-07' },
->>>>>>> 226c8cd43e01dc0e6dac8cbfb90c95772a7eda3d
+    { id: 1, 
+      name: "Yoga", 
+      category: null, 
+      info: '', 
+      price: null,
+      maxParticipants: null,
+      currentParticipants: null,
+      participants: [],
+      date: '2020-05-03', 
+      color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
+      time: {
+        
+        timeSlot: null,
+      }
+    },
+    { id: 2,
+       name: "Event", 
+       category: null, 
+       info: '', 
+       date: '2020-06-22', 
+       price: null,
+       maxParticipants: null,
+       currentParticipants: null,
+       participants: [],
+       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+       time: {
+        
+        timeSlot: null,
+      }
+      },
+    { id: 3, 
+      name: "Session", 
+      category: null, 
+      info: '',
+       date: '2020-07-07', 
+       price: null,
+       maxParticipants: null,
+       currentParticipants: null,
+       participants: [],
+       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+       time: {
+        
+        timeSlot: null,
+      }
+       },
     {
       id: 4,
       name: "Yin & Yang",
@@ -108,18 +144,14 @@ const model = {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-<<<<<<< HEAD
       date: '2020-05-28',
-=======
-      date: '2020-04-28',
->>>>>>> 226c8cd43e01dc0e6dac8cbfb90c95772a7eda3d
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
       category: 1,
       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 1,
+        timeSlot: 0,
       }
     },
     {
