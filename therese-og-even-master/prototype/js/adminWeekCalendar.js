@@ -44,7 +44,11 @@ function appointmentsAdmin(timeSlot) {
           <td class="weekday">
          
           
+<<<<<<< HEAD
           ${eventsFromDayAndTime(model.current.week, dayNo, timeSlot,).map(c => `
+=======
+          ${eventsFromDayAndTime(model.current.week, dayNo,  timeSlot,).map(c => `
+>>>>>>> 226c8cd43e01dc0e6dac8cbfb90c95772a7eda3d
           
           
           ${c.name}<br>
