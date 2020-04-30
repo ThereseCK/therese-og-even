@@ -23,7 +23,7 @@ function showInfo() {
       name: `<p class="goBack">⇦</p>`,
       info: ""
     });
-    categories.push({ id: null, name: `<p class="goBack">↞</p>` });
+    
   }
 
   const courses = model.categories.filter(
