@@ -1,14 +1,4 @@
-function showLogIn() {
-  let loginHTML = `<div>
-    <input type="text" value="Brukernavn"> </input> <br>
-    <input type="text" value="Passord"> </input> <br>
-    <button onclick="profil()"> Logg Inn</button>
-    <button onclick="adminMainPage()">Admin</button>
-    <button onclick="createUser()">Registrer bruker</button>
-    </div>
-    `;
-  document.getElementById("content").innerHTML = loginHTML;
-}
+
 
 function showInfo() {
   let test = "";
@@ -30,18 +20,18 @@ function showInfo() {
 
     categories.push({
       id: selectedCategory.category,
-      name: "Tilbake",
+      name: `<p class="goBack">⇦</p>`,
       info: ""
     });
-    categories.push({ id: null, name: "Alle toppkategorier" });
+    categories.push({ id: null, name: `<p class="goBack">↞</p>` });
   }
 
-  const courses = model.calender.courses.filter(
+  const courses = model.categories.filter(
     cat => cat.category === categoryId
   );
   document.getElementById("content").innerHTML = `
-     <h2>Kategorier</h2>
-     <ul>
+    <div> 
+     
         ${categories
           .map(
             cat => `<div>
@@ -50,20 +40,20 @@ function showInfo() {
         `
           )
           .join("")} 
-        </ul> 
+        
         <hr>
       ${test}  
       <br>      
-        <h2>Kommende Kurs</h2>
-    <ul>
+        <h2>Kommende</h2>
+   
     ${courses
       .map(
         course => `
-        ${course.name} <br> ${course.date}   
+       <br> <b>${course.name}</b> <br> <tt>✦</tt> ${course.date}  <br>
         `
       )
       .join("")}
-        </ul>             
+           </div>          
         
         `;
 }
@@ -74,12 +64,19 @@ function selectCategory(id) {
 }
 
 function initMenu() {
+  // let edittext = model.menuOptions.map(n => n.loggedInn);
+  // let edittext2 = model.menuOptions.map(n => n.txt);
+  // let loggedInOrNot = edittext == true ? 'Logg Ut' : "Logg Inn" ;
+  document.getElementById("navbar").innerHTML = "";
+  
+
   for (element of model.menuOptions) {
     if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
       document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
                              onclick="${element.functionName}()"> ${element.txt}
                              
                             </button>`;
+                            //vise log in om ikkelogget inn vise logg ut om logget in
     }
   }
 }
@@ -91,7 +88,7 @@ function home() {
   <img src="hol2.jpg"  height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
   </div>
   <hr>
-  <p>Er dette riktig fil?</p>
+
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <p>Her kommer tekst du ønsker skal vises på forsiden</p>
   <br>
@@ -104,32 +101,6 @@ function home() {
   `
 }
 
-function profil() {
-  model.logInSession = "Bruker";
-  const filter = model.categories.filter(k => k.name === "Manneyoga");
-  let profilHTML = `
-    Du er påmeldt: ${filter
-      .map(
-        n => `<div>
-        ${n.name} <br> ${n.date} <br> ${n.info} </div>`
-      )
-      .join(" ")}`;
-  document.getElementById("content").innerHTML = profilHTML;
-}
-
-function createUser() {
-  document.getElementById("content").innerHTML = `
-    <div>
-    <input type="text" value="Navn"></input> <br>
-    <input type="text" value="Brukernavn"></input> <br>
-    <input type="text" value="Epost"></input> <br>
-    <input type="text" value="TelefonNummer"></input> <br>
-    <input type="text" value="Nytt passord"></input> <br>
-    <input type="text" value="Bekreft Passord"></input> <br>
-    <p>Registrer deg på nyhetsbrev</p> <input type="checkbox"></input> <br>
-    <button onclick="completeFraModell()">Bekreft</button>
-    </div>`;
-}
 
 function showContactinfo() {  
   document.getElementById('footer').innerHTML = `
@@ -141,4 +112,19 @@ function showContactinfo() {
 
 
   `;
+}
+
+function userProfil(){
+
+
+  model.logInSession = "Bruker";
+    const filter = model.categories.filter(k => k.name === "Manneyoga");
+    let profilHTML = `
+      Du er påmeldt: ${filter
+        .map(
+          n => `<div>
+          ${n.name} <br> ${n.date} <br> ${n.info} </div>`
+        )
+        .join(" ")}`;
+    document.getElementById("content").innerHTML = profilHTML;
 }

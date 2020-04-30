@@ -26,12 +26,12 @@ function userCalendar() {
 
 
 
-function getMondayOfFirstWeekOfMonth(date) {
-    while (date.getDate() >= 7) {
-        date = addDays(date, -7);
-    }
-    return date;
-}
+// function getMondayOfFirstWeekOfMonth(date) {
+//     while (date.getDate() >= 7) {
+//         date = addDays(date, -7);
+//     }
+//     return date;
+// }
 
 function createWeekHtml(monday) {
     return createMultipleDayHtml(monday, item => item.color);

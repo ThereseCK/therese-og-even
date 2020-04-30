@@ -7,7 +7,7 @@ const model = {
   logInSession: "Bruker",
   calender: {
     ukepiltastForward: 0,
-    currentWeek: "2020-04-20",  
+    currentWeek: '2020-04-20',  
     days: [
       "Mandag",
       "Tirsdag",
@@ -35,48 +35,14 @@ const model = {
       "Desember"
     ],
     currentEventView: ["monthly", "weekly", "daily"],
-    courses: [
-      {
-        id: 1,
-        name: "Vår-yin",
-        date: "2020-05-01",
-        maxParticipants: 10,
-        participants: ["even", "therese"],
-        category: 1
-      },
-      {
-        id: 2,
-        name: "Yin",
-        date: "2020-04-01",
-        maxParticipants: 15,
-        participants: ["even", "therese"],
-        category: 1
-      },
-      {
-        id: 3,
-        name: "Midnattsyogaevent",
-        date: "2020-05-02",
-        maxParticipants: 5,
-        participants: [],
-        category: 2
-      },
-      {
-        id: 4,
-        name: "Veileding",
-        date: "2020-05-05",
-        maxParticipants: 1,
-        participants: ['Even'],
-        category: 3
-      }
-    ]
   },
 
   menuOptions: [
     { id: 5, functionName: "home", txt: "&#127968;", onlyForAdmin: false },
     { id: 3, functionName: "showInfo", txt: "Informasjon", onlyForAdmin: false },
     { id: 4, functionName: "userCalendar", txt: "Kalender & Booking", onlyForAdmin: false },
-    { id: 2, functionName: "showLogIn", txt: "Logg inn", onlyForAdmin: false },
-    { id: 1, functionName: "profil", txt: "&#128100;", onlyForAdmin: false },
+    { id: 2, functionName: "showLogIn", txt: "Logg inn", onlyForAdmin: false, loggedInn: false}, 
+    { id: 1, functionName: "userProfil", txt: "&#128100;", onlyForAdmin: false },
     { id: 6, functionName: "logOut", txt: "Logg Ut", onlyForAdmin: true },
     {
       id: 7,
@@ -99,17 +65,18 @@ const model = {
   },
   selectedCategoryId: null,
   categories: [
-    { id: 1, name: "Yoga", category: null, info: '', color: null },
-    { id: 2, name: "Event", category: null, info: '' },
-    { id: 3, name: "Session", category: null, info: '' },
+    { id: 1, name: "Yoga", category: null, info: '', date: '2020-05-03', color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,},
+    { id: 2, name: "Event", category: null, info: '', date: '2020-06-22', color: `<p style="color: blue; font-size:20px; float:left;">.</p>`},
+    { id: 3, name: "Session", category: null, info: '', date: '2020-07-07', color: `<p style="color: green; font-size:20px; float:left;">.</p>` },
     {
       id: 4,
       name: "Yin & Yang",
       info: "pusteyoga",
-      date: '2020-03-24',
+      date: '2020-05-24',
       price: 1500,
       maxParticipants: 15,
-      currentParticipants: 5,
+      currentParticipants: 2,
+      participants: [1, 2],
       category: 1,
       color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
       time: {
@@ -121,7 +88,7 @@ const model = {
       id: 5,
       name: "Manneyoga",
       info: "Dette er en behagelig øvelse som passer for menn",
-      date: '2020-04-14',
+      date: '2020-04-28',
       price: 2000,
       maxParticipants: 10,
       currentParticipants: 2,
@@ -135,21 +102,21 @@ const model = {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-      date: '2020-05-05',
+      date: '2020-05-28',
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
       category: 1,
       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
       time: {
-        timeSlot: 0,
+        timeSlot: 1,
       }
     },
     {
       id: 7,
       name: "Fullmåne-yoga",
       info: "yoga ved fullmåne",
-      date: '2020-04-24',
+      date: '2020-05-24',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 5,
@@ -163,7 +130,7 @@ const model = {
       id: 8,
       name: "Nymåne-yoga",
       info: "yoga ved nymåne",
-      date: '2020-04-15',
+      date: '2020-05-15',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 2,
@@ -177,7 +144,7 @@ const model = {
       id: 9,
       name: "Veiledning",
       info: "veilednings time",
-      date: '2020-04-20',
+      date: '2020-05-20',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 0,
@@ -187,32 +154,19 @@ const model = {
         timeSlot: 3,
       }
     },
-    {
-      id: 10,
-      name: "Yoga",
-      info: "yoga",
-      date: '2020-05-01',
-      price: 1500,
-      maxParticipants: 1,
-      currentParticipants: 1,
-      category: 3,
-      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
-      time: {
-        timeSlot: 3,
-      }
-    },
+    
     {
       id: 11,
       name: "Yoga",
       info: "Fjernes bare test",
-      date: '2020-04-25',
+      date: '2020-05-25',
       price: 1500,
       maxParticipants: 1,
-      currentParticipants: 1,
+      currentParticipants: 1,   // step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
       category: 3,
       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
       time: {
-        timeslot: 4,
+        timeSlot: 4,
       }
     },
   ],
@@ -223,9 +177,9 @@ const model = {
     error: null,
     isAdmin: false
   },
-  users: [
+  users: [   //step 3: løkke med if inni - matcher id'en til denne useren til en av de i current participants? isåfall print ut navn
     {
-      id: "even",
+      id: 0,   
       name: "Even Vågen",
       password: "passord",
       adress: "Skien",
@@ -235,7 +189,7 @@ const model = {
       category: 2
     },
     {
-      id: "therese",
+      id: 1,
       name: "Therese Nordnes",
       password: "lol",
       adress: "Verningen",
@@ -243,10 +197,21 @@ const model = {
       email: "hade@hotmail.com",
       isAdmin: false,
       category: 1
+    },
+    {
+      id: 2,
+      name: "Ola Nordmann",
+      password: "o",
+      adress: "skogen",
+      phone: "25364758",
+      email: "p",
+      isAdmin: false,
+      category: 1
     }
   ],
 
   newUser: {
+    id: 0,       // step 1: autoid for hver bruker - sjekk length til allerede registrerte users og pluss på 1 - i pushen til users
     name: "",
     username: "",
     email: "",
@@ -256,3 +221,4 @@ const model = {
     complete: true,
   }
 };
+
