@@ -18,9 +18,9 @@ function userCalendar() {
         <tr>${createWeekHtml(addDays(mondayMonthStart, 28))}</tr>
         </table>
         <br>
-        <p class="ccRed">Rød: Yoga</p>
-        <p class="ccBlue">Blå: Events</p>
-        <p class="ccGreen">Grønn: Sessions</p>
+        <p class="infoRed">Rød: Yoga</p>
+        <p class="infoBlue">Blå: Events</p>
+        <p class="infoGreen">Grønn: Sessions</p>
         `;
     }
 
@@ -46,8 +46,10 @@ function dayDate(timeSlot) {
     let disabledOrNot = model.login.loggedInUser == null ? 'disabled' : "" ;
     
     document.getElementById('content').innerHTML = `
-${dateFromClick}    
+${dateFromClick}   
+ 
 `; 
+
     
     for(event of model.categories){
         if(event.date == dateFromClick){
@@ -55,10 +57,11 @@ ${dateFromClick}
                 let timeSlotInCurrent = event.time[timeSlot];
                 let timesFromTimeslotArray = model.calender.timeSlots[timeSlotInCurrent];
                 document.getElementById('content').innerHTML += '</br>' + timesFromTimeslotArray;
+           
             }
             document.getElementById('content').innerHTML +=` <br>
             ${event.name}<br>
-            <div><button class="navbarButton" style="width: 100px;" onclick="userJoinSession" ${disabledOrNot}> Meld på </button> <div> 
+            <div><button class="navbarButton" style="width: 100px;" onclick="userJoinSession()" ${disabledOrNot}> Meld på </button> <div> 
             
             `;
             

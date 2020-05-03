@@ -62,8 +62,21 @@ select{
   color: darkslategray;
   font-size: 8px;
   text-align: center;
+  padding-top: 10px;
+  vertical-align: text-top;
   border-collapse: collapse;
-  height: 50px;
+  height: 100px;
+  width: auto;
+}
+.weekdayHeader{
+  overflow: hidden;
+  border: 1px solid rgb(159, 185, 159);
+  color: darkslategray;
+  font-size: 9px;
+  text-align: center;
+  vertical-align: middle;
+  border-collapse: collapse;
+  height: 30px;
   width: auto;
 }
 
@@ -87,27 +100,39 @@ select{
   color: darkslategrey;
 }
 .calendarButton{
-  font-size: 8px;
-  width: auto;
+  font-size: 7px;
+  width: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 
 }
 .ccRed{
   color:red;
   font-size: 10px;
-  
 }
 
 .ccBlue{
   color: blue;
-  font-size: 10px;
+  font-size: 12px;
 }
 .ccGreen{
   color:green;
+  font-size: 12px;
+}
+.infoRed{
+  color:red;
+  font-size: 12px;
+}
+.infoBlue{
+  color: blue;
   font-size: 10px;
 }
-th{
+.infoGreen{
+  color:green;
   font-size: 10px;
+
 }
+
 
 /* LOGIN */
 

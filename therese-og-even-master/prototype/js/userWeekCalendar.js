@@ -13,7 +13,7 @@ function weekCalendar() {
 </div>
 <table class="weekday">
 <tr>
-<th> Uke: ${showWeekSwitch()} </th>
+<th class="weekdayHeader"> Uke: ${showWeekSwitch()} </th>
 
 ${createWeekCalendarHtml(mondayWeekStart)}
 
@@ -38,7 +38,7 @@ function appointments(timeSlot) {
   const dayNos = Array.from(model.calender.days.keys());
   
   return `
-      <tr><th class="weekday">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
+      <tr><th class="weekdayHeader">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
           `
           <td class="weekday">
          

@@ -115,15 +115,19 @@ function showContactinfo() {
 
 function userProfil(){
 
+  let loggedInUsersObj = findUser(model.login.loggedInUser);
+  let categories = loggedInUsersObj.program;
+  let html = `<div><b>Du er logget inn som: </b><br> ${model.login.loggedInUser}<br><hr>
+  </div>`;
+  
+  for( let event of model.categories){
+      if(!categories.includes(event.id)) continue;
+      html += `
+      <br>
+      <div> ${event.name}<br><br>
+      ${event.date}<br>
+      <hr></div>`
+  }
+  document.getElementById('content').innerHTML = html;
 
-  model.logInSession = "Bruker";
-    const filter = model.categories.filter(k => k.name === "Manneyoga");
-    let profilHTML = `
-      Du er påmeldt: ${filter
-        .map(
-          n => `<div>
-          ${n.name} <br> ${n.date} <br> ${n.info} </div>`
-        )
-        .join(" ")}`;
-    document.getElementById("content").innerHTML = profilHTML;
 }

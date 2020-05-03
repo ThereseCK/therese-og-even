@@ -32,15 +32,16 @@ function test() {
 
 
 
-function userJoinSession(){
-    document.getElementById('content').innerHTML = `
-    <br>
-    <div>
-    Du er nå meldt på:<br>
-    navn:<br><br>
-    klokka:<br><br>
-    <b>Husk yogamatte!<b>
-    <p style="color: green;">Vipps 150kr til 900 00 000</p>
-   </div>
-    `;
+// function userJoinSession(){
+   
+    
+
+// }
+function findUser(username){
+    for (let user of model.users) {
+        if (user.email == username ){
+            return user;
+        }
+    }
+    return null;
 }

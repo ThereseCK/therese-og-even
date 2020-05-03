@@ -21,7 +21,7 @@ function dateString(baseDate, index) {
 }
 function createWeekdayNamesHtml() {
     return model.calender.days.map(d => ` 
-        <th class="weekday">${d}</th>
+        <th class="weekdayHeader">${d}</th>
         `).join(' ');
         
 
@@ -36,6 +36,7 @@ function createMultipleDayHtml(baseDate, itemToText) {
                 <p><b>${itemToText(item)}</b></p>
             `).join('')}
         </td>
+        
     `).join('');
     return html;
 }
@@ -56,9 +57,9 @@ function createMultipleDayHtmlAdmin(baseDate, itemToText) {
 function createMultipleDayWeekHtml(baseDate) {
     var dayCount = 7;
     const html = range(0, dayCount).map(i => `
-        <th class="weekday">
-${model.calender.days[i]}<br>
-            <b>${ dateString(baseDate, i)}</b><br/>
+        <th class="weekdayHeader">
+${model.calender.days[i]}<br><br>
+            ${ dateString(baseDate, i)}<br/>
             
         
    </th> `).join('');

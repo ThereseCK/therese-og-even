@@ -74,53 +74,53 @@ const model = {
       currentParticipants: null,
       participants: [],
       date: '2020-05-03', 
-      color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
+      color: `<p class="ccRed">☯</p>`,
       time: {
         
-        timeSlot: null,
+        timeSlot: 3,
       }
     },
     { id: 2,
        name: "Event", 
        category: null, 
        info: '', 
-       date: '2020-06-22', 
+       date: '2020-05-20', 
        price: null,
        maxParticipants: null,
        currentParticipants: null,
        participants: [],
-       color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+       color: `<p class="ccBlue">☯</p>`,
        time: {
         
-        timeSlot: null,
+        timeSlot: 1,
       }
       },
     { id: 3, 
       name: "Session", 
       category: null, 
       info: '',
-       date: '2020-07-07', 
+       date: '2020-05-24', 
        price: null,
        maxParticipants: null,
        currentParticipants: null,
        participants: [],
-       color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+       color: `<p class="ccGreen">☯</p>`,
        time: {
         
-        timeSlot: null,
+        timeSlot: 4,
       }
        },
     {
       id: 4,
       name: "Yin & Yang",
       info: "pusteyoga",
-      date: '2020-05-24',
+      date: '2020-05-22',
       price: 1500,
       maxParticipants: 15,
       currentParticipants: 2,
       participants: [1, 2],
       category: 1,
-      color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
+      color: `<p class="ccRed">☯</p>`,
       time: {
         
         timeSlot: 1,
@@ -130,12 +130,12 @@ const model = {
       id: 5,
       name: "Manneyoga",
       info: "Dette er en behagelig øvelse som passer for menn",
-      date: '2020-04-28',
+      date: '2020-05-21',
       price: 2000,
       maxParticipants: 10,
       currentParticipants: 2,
       category: 1,
-      color: `<p style="color: red;  font-size:20px; float:left;">.</p>`,
+      color: `<p class="ccRed">☯</p>`,
       time: {
         timeSlot: 2,
       }
@@ -144,26 +144,26 @@ const model = {
       id: 6,
       name: "Yin",
       info: "Bevegelse",
-      date: '2020-05-28',
+      date: '2020-05-20',
       price: 1000,
       maxParticipants: 12,
       currentParticipants: 3,
       category: 1,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+      color: `<p  class="ccBlue">☯</p>`,
       time: {
-        timeSlot: 0,
+        timeSlot: 3,
       }
     },
     {
       id: 7,
       name: "Fullmåne-yoga",
       info: "yoga ved fullmåne",
-      date: '2020-05-24',
+      date:  '2020-05-24',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 5,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+      color: `<p  class="ccBlue">☯</p>`,
       time: {
         timeSlot: 4,
       }
@@ -172,12 +172,12 @@ const model = {
       id: 8,
       name: "Nymåne-yoga",
       info: "yoga ved nymåne",
-      date: '2020-05-15',
+      date: '2020-05-19',
       price: 1000,
       maxParticipants: 5,
       currentParticipants: 2,
       category: 2,
-      color: `<p style="color: blue; font-size:20px; float:left;">.</p>`,
+      color: `<p  class="ccBlue">☯</p>`,
       time: {
         timeSlot: 2,
       }
@@ -186,14 +186,28 @@ const model = {
       id: 9,
       name: "Veiledning",
       info: "veilednings time",
-      date: '2020-05-20',
+      date: '2020-05-19',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 0,
       category: 3,
-      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+      color: `<p class="ccGreen">☯</p>`,
       time: {
-        timeSlot: 3,
+        timeSlot: 2,
+      }
+    },
+    {
+      id: 10,
+      name: "Nymåne-toga test",
+      info: "veilednings time",
+      date: '2020-05-23',
+      price: 1500,
+      maxParticipants: 1,
+      currentParticipants: 0,
+      category: 3,
+      color: `<p class="ccGreen">☯</p>`,
+      time: {
+        timeSlot: 2,
       }
     },
     
@@ -201,14 +215,14 @@ const model = {
       id: 11,
       name: "Yoga",
       info: "Fjernes bare test",
-      date: '2020-05-25',
+      date: '2020-05-05',
       price: 1500,
       maxParticipants: 1,
       currentParticipants: 1,   // step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
       category: 3,
-      color: `<p style="color: green; font-size:20px; float:left;">.</p>`,
+      color: `<p class="ccGreen">☯</p>`,
       time: {
-        timeSlot: 4,
+        timeSlot: 1,
       }
     },
   ],
@@ -228,7 +242,7 @@ const model = {
       phone: "12345678",
       email: "hei@hotmail.com",
       isAdmin: true,
-      category: 2
+      program: [2, 8, 7],
     },
     {
       id: 1,
@@ -238,17 +252,17 @@ const model = {
       phone: "87654321",
       email: "hade@hotmail.com",
       isAdmin: false,
-      category: 1
+      program: [1, 6, 5],
     },
     {
       id: 2,
       name: "Ola Nordmann",
-      password: "o",
+      password: "Passord.",
       adress: "skogen",
       phone: "25364758",
-      email: "p",
+      email: "Brukernavn.",
       isAdmin: false,
-      category: 1
+      program: [3, 4, 10],
     }
   ],
 
