@@ -32,11 +32,17 @@ function test() {
 
 
 
-function userJoinSession(){
-  document.getElementById("content").innerHTML = `
-  <div>Her kommer antall deltagere og bekreft</div>
-  `
+function userJoinSession(timeslot){
 
+
+let guests = model.guests.map(g =>`<option> ${g}</option>`).join(' ');
+  document.getElementById("content").innerHTML = `
+  
+  <div>
+  <select>${guests}</select><br>
+  <button type="submit">Bekreft</button>
+  </div>
+  `
 }
 
 function findUser(username){
