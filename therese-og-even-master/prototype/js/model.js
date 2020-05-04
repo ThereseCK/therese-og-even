@@ -242,7 +242,8 @@ const model = {
       phone: "12345678",
       email: "hei@hotmail.com",
       isAdmin: true,
-      program: [2, 8, 7, ],
+      program: [{eventId: 1, peopleCount: 3}, 
+      ],
     },
     {
       id: 1,
@@ -252,7 +253,8 @@ const model = {
       phone: "87654321",
       email: "hade@hotmail.com",
       isAdmin: false,
-      program: [1, 6, 5],
+      program: [{eventId: 1, peopleCount: 3}, 
+                {eventId: 3, peopleCount: 2}],
     },
     {
       id: 2,
@@ -262,7 +264,8 @@ const model = {
       phone: "25364758",
       email: "Brukernavn.",
       isAdmin: false,
-      program: [3, 4, 10],
+      program: [{eventId: 1, peopleCount: 3}
+      ], 
     }
   ],
 
