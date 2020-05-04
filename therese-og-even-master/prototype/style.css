@@ -87,6 +87,7 @@ select{
   height: 20px;
 }
 .weekCalendar{
+  
   width: 100px;
   margin: 20px;
   background-color: rgb(173, 191, 186); 
@@ -100,6 +101,7 @@ select{
   color: darkslategrey;
 }
 .calendarButton{
+  text-align: center;
   font-size: 7px;
   width: 30px;
   margin-top: 5px;
@@ -111,6 +113,7 @@ select{
   width: auto;
   margin-top: 5px;
   margin-bottom: 10px;
+  height: 15px;
 }
 .ccRed{
   color:red;

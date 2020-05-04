@@ -47,13 +47,13 @@ function appointments(timeSlot) {
           
           
           ${c.name}<br>
-          <button class="calendarButton" onclick="userJoinSession()" ${disabledOrNot}> Meld på</button>   
+          <div  onclick="userJoinSession(this)"><button class="calendarButton"> Meld på</button>  </div> 
           <br>
           `).join('')}
           
           </td>`).join('')}
           </tr>`;
-          
+         
         }
 
 

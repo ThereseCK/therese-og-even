@@ -32,18 +32,7 @@ function test() {
 
 
 
-function userJoinSession(timeslot){
 
-
-let guests = model.guests.map(g =>`<option> ${g}</option>`).join(' ');
-  document.getElementById("content").innerHTML = `
-  
-  <div>
-  <select>${guests}</select><br>
-  <button type="submit">Bekreft</button>
-  </div>
-  `
-}
 
 function findUser(username){
     for (let user of model.users) {

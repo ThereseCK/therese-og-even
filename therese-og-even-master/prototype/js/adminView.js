@@ -37,44 +37,71 @@ function logOut() {
 
 
 function infoChange(){
-    const categoryId = model.selectedCategoryId;
-    const categories = model.categories.filter(
-      cat => cat.category === categoryId
-    );
-    const selectedCategory = model.categories.filter(
-      cat => cat.id === categoryId
-    )[0];
+  let test = "";
+
+  const categoryId = model.selectedCategoryId;
+  const categories = model.categories.filter(
+    cat => cat.category === categoryId
+  );
+  const selectedCategory = model.categories.filter(
+    cat => cat.id === categoryId
+  )[0];
+  if (selectedCategory) {
+    // const catName = categories.map(b => b.name).join(" ");
+    // const info = categories.map(n => n.info).join(" ");
+
+    model.categories[model.selectedCategoryId - 1].info == null
+      ? (test = "")
+      : (test = model.categories[model.selectedCategoryId - 1].info);
+
+    categories.push({
+      id: selectedCategory.category,
+      name: `<p class="goBack">⇦</p>`,
+      info: ""
+    }),
+    categories.push({ id: null, 
+      name: `<p onclick="pushNewEvent()">Legg Til</p>` });
     
-  
-   
-    document.getElementById("content").innerHTML = `
-       <h2>Kategorier</h2>
-      
-          ${categories
-            .map(
-              cat => `<div>
-              <select  onclick="selectCategoryChange(${cat.id})">
-          <option>${cat.name}</option>
-          </select>
-          </div>
-          `
-            )
-            .join("")} 
+  }
 
-            <br>
-            
-            `;
+  const courses = model.categories.filter(
+    cat => cat.category === categoryId
+  );
+  document.getElementById("content").innerHTML = `
+    <div> 
+     
+        ${categories
+          .map(
+            cat => `<div>
+        <button class="infoButton" onclick="selectCategoryAdmin(${cat.id})">${cat.name}</button></div>
+         
+        `
+          )
+          .join("")} 
+        `;}
+           
+        function selectCategoryAdmin(id) {
+          model.selectedCategoryId = id;
+          
+          infoChange();
+          if(id != null){
+          document.getElementById('content').innerHTML += `
+          <div>
+          <input type="text" value="Endre informasjon"> </input>
+          <br><button>Endre</button>
+          </div>`
         }
+      }
 
-        function selectCategoryChange(id) {
-            id = null;
-            model.selectedCategoryId = id;
-            document.getElementById('content').innerHTML = `
-            <div>
-            <input type="text" value="Endre informasjon"> </input>
-            <br><button>Endre</button>
-            </div>
-        `;
+        // function selectCategoryChange(id) {
+        //     id = null;
+        //     model.selectedCategoryId = id;
+        //     document.getElementById('content').innerHTML = `
+        //     <div>
+        //     <input type="text" value="Endre informasjon"> </input>
+        //     <br><button>Endre</button>
+        //     </div>
+        // `;
        
       
-  }
+  

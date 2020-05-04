@@ -5,7 +5,7 @@ const model = {
   },
   selectedModule: "Home",
   logInSession: "Bruker",
-  guests: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  guests: ["Meg", "+1", "+2", "+4", "+5", "+6", "+7", "+8", "+9"],
   calender: {
     ukepiltastForward: 0,
     currentWeek: '2020-04-20',  

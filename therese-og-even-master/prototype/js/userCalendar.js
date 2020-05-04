@@ -45,8 +45,8 @@ function dayDate(timeSlot) {
     let dateFromClick = timeslotString.slice(16, 26);
     let disabledOrNot = model.login.loggedInUser == null ? 'disabled' : "" ;
     
-    document.getElementById('content').innerHTML = `
-${dateFromClick}   
+    document.getElementById('content').innerHTML = `</br>
+<div>${dateFromClick} <hr> </div>
  
 `; 
 
@@ -56,12 +56,12 @@ ${dateFromClick}
             for(timeSlot in event.time){
                 let timeSlotInCurrent = event.time[timeSlot];
                 let timesFromTimeslotArray = model.calender.timeSlots[timeSlotInCurrent];
-                document.getElementById('content').innerHTML += '</br>' + timesFromTimeslotArray;
+                document.getElementById('content').innerHTML += ' </br>' + timesFromTimeslotArray;
            
             }
             document.getElementById('content').innerHTML +=` <br>
             ${event.name}<br>
-            <div><button class="navbarButton" style="width: 100px;" onclick="userJoinSession()" ${disabledOrNot}> Meld på </button> <div> 
+            <div onclick="userJoinSession(this)"><button class="navbarButton" style="width: 100px;" > Meld på </button> </div> 
             
             `;
             

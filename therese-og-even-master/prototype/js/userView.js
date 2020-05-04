@@ -11,8 +11,8 @@ function showInfo() {
     cat => cat.id === categoryId
   )[0];
   if (selectedCategory) {
-    const catName = categories.map(b => b.name).join(" ");
-    const info = categories.map(n => n.info).join(" ");
+    // const catName = categories.map(b => b.name).join(" ");
+    // const info = categories.map(n => n.info).join(" ");
 
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
@@ -135,3 +135,18 @@ function userProfil(){
   document.getElementById('content').innerHTML = html;
 
 }
+
+function userJoinSession(confirmBTN){
+
+  confirmBTN.innerHTML = '';
+  let guests = model.guests.map(g =>`<option> ${g}</option>`).join(' ');
+    confirmBTN.innerHTML += `
+    <select class="calendarButtonAdmin">
+    ${guests}
+    </select><br>
+
+    <button class="calendarButtonAdmin">Bekreft</button>
+    </div>
+    `
+ 
+  }
