@@ -1,5 +1,5 @@
-function adminWeekCalender(){
-    
+function adminWeekCalender() {
+
   let mondayWeekStart = model.current.week;
   if (mondayWeekStart === null) {
     mondayWeekStart = model.current.week = getMondayOfCurrentWeek(
@@ -38,41 +38,57 @@ function appointmentsAdmin(timeSlot) {
 
   const dayNos = Array.from(model.calender.days.keys());
   
+
   return `
       <tr><th class="weekday">${model.calender.timeSlots[timeSlot]}</th>${dayNos.map(dayNo =>
-          `
+    `
           <td class="weekday">
          
           
-          ${eventsFromDayAndTime(model.current.week, dayNo, timeSlot,).map(c => `
-          
-          
+          ${eventsFromDayAndTime(model.current.week, dayNo, timeSlot).map(c => `
           ${c.name}<br>
-          ${c.currentParticipants} / ${c.maxParticipants}<br>
-          <button class="calendarButton">Deltakere</button>   
+          Påmeldte: ${getNumberOfRegistrations(c.id)} / ${c.maxParticipants}<br>
+          <br>
+          <button class="calendarButtonAdmin" >Deltakere</button>   
           <br>
           `).join('')}
           
           </td>`).join('')}
           </tr>`;
-          
+
+}
+
+
+function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
+  let baseDateMillis = new Date(baseDateTxt).getTime();
+  let date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
+    .toISOString()
+    .substr(0, 10);
+  return model.categories.filter(
+    (categories) =>
+      categories.date === date && categories.time.timeSlot === timeSlot
+  );
+}
+
+
+  function getNumberOfRegistrations(eventId){
+    let count = 0;
+    for(let user of model.users){
+        let registrations = user.program.filter(e=>e.eventId === eventId);
+        if(registrations.length === 1){
+            const registration = registrations[0];
+            count += registration.peopleCount;
         }
+    }
+    return count;
+}
 
 
-        function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
-          let baseDateMillis = new Date(baseDateTxt).getTime();
-          let date = new Date(baseDateMillis + 1000 * 60 * 60 * 24 * dayCount)
-            .toISOString()
-            .substr(0, 10);
-            return model.categories.filter(
-                (categories) =>
-                categories.date === date && categories.time.timeSlot === timeSlot
-                );
-            }
-      
+
+
 
 function switchWeekAdmin(x) {
- model.current.week = addDays(
+  model.current.week = addDays(
     model.current.week,
     x * 7
   );
@@ -85,5 +101,5 @@ function showWeekSwitch() {
   return week + model.calender.ukepiltastForward;
 }
 
-      
+
 

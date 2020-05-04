@@ -65,7 +65,7 @@ ${dateFromClick}
             
             `;
             
-            //if(isAdmin == true) legg til mer stæsj i inner'n B)
+            //if(isAdmin == true) legg til mer stæsj i inner'n B
            
         }
     }

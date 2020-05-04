@@ -106,6 +106,12 @@ select{
   margin-bottom: 10px;
 
 }
+.calendarButtonAdmin{
+  font-size: 7px;
+  width: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 .ccRed{
   color:red;
   font-size: 10px;

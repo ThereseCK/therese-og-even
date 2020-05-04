@@ -116,7 +116,10 @@ function showContactinfo() {
 function userProfil(){
 
   let loggedInUsersObj = findUser(model.login.loggedInUser);
-  let categories = loggedInUsersObj.program;
+  let categories = loggedInUsersObj.program.map(n => n.eventId);
+  // let people = loggedInUsersObj.program.filter(n => n.peopleCount === participants);
+ 
+
   let html = `<div><b>Du er logget inn som: </b><br> ${model.login.loggedInUser}<br><hr>
   </div>`;
   
@@ -125,6 +128,7 @@ function userProfil(){
       html += `
       <br>
       <div> ${event.name}<br><br>
+    
       ${event.date}<br>
       <hr></div>`
   }

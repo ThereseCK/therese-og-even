@@ -70,9 +70,7 @@ const model = {
       category: null, 
       info: '', 
       price: null,
-      maxParticipants: null,
-      currentParticipants: null,
-      participants: [],
+      maxParticipants: 1,
       date: '2020-05-03', 
       color: `<p class="ccRed">☯</p>`,
       time: {
@@ -87,8 +85,6 @@ const model = {
        date: '2020-05-20', 
        price: null,
        maxParticipants: null,
-       currentParticipants: null,
-       participants: [],
        color: `<p class="ccBlue">☯</p>`,
        time: {
         
@@ -102,8 +98,6 @@ const model = {
        date: '2020-05-24', 
        price: null,
        maxParticipants: null,
-       currentParticipants: null,
-       participants: [],
        color: `<p class="ccGreen">☯</p>`,
        time: {
         
@@ -117,8 +111,6 @@ const model = {
       date: '2020-05-22',
       price: 1500,
       maxParticipants: 15,
-      currentParticipants: 2,
-      participants: [1, 2],
       category: 1,
       color: `<p class="ccRed">☯</p>`,
       time: {
@@ -133,7 +125,6 @@ const model = {
       date: '2020-05-21',
       price: 2000,
       maxParticipants: 10,
-      currentParticipants: 2,
       category: 1,
       color: `<p class="ccRed">☯</p>`,
       time: {
@@ -147,7 +138,6 @@ const model = {
       date: '2020-05-20',
       price: 1000,
       maxParticipants: 12,
-      currentParticipants: 3,
       category: 1,
       color: `<p  class="ccBlue">☯</p>`,
       time: {
@@ -161,7 +151,6 @@ const model = {
       date:  '2020-05-24',
       price: 1000,
       maxParticipants: 5,
-      currentParticipants: 5,
       category: 2,
       color: `<p  class="ccBlue">☯</p>`,
       time: {
@@ -175,7 +164,6 @@ const model = {
       date: '2020-05-19',
       price: 1000,
       maxParticipants: 5,
-      currentParticipants: 2,
       category: 2,
       color: `<p  class="ccBlue">☯</p>`,
       time: {
@@ -188,8 +176,7 @@ const model = {
       info: "veilednings time",
       date: '2020-05-19',
       price: 1500,
-      maxParticipants: 1,
-      currentParticipants: 0,
+      maxParticipants: 1, 
       category: 3,
       color: `<p class="ccGreen">☯</p>`,
       time: {
@@ -203,7 +190,6 @@ const model = {
       date: '2020-05-23',
       price: 1500,
       maxParticipants: 1,
-      currentParticipants: 0,
       category: 3,
       color: `<p class="ccGreen">☯</p>`,
       time: {
@@ -217,8 +203,7 @@ const model = {
       info: "Fjernes bare test",
       date: '2020-05-05',
       price: 1500,
-      maxParticipants: 1,
-      currentParticipants: 1,   // step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
+      maxParticipants: 1,// step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
       category: 3,
       color: `<p class="ccGreen">☯</p>`,
       time: {
@@ -242,7 +227,10 @@ const model = {
       phone: "12345678",
       email: "hei@hotmail.com",
       isAdmin: true,
-      program: [{eventId: 1, peopleCount: 3}, 
+      program: [
+        {eventId: 4, peopleCount: 3}, 
+        {eventId: 5, peopleCount: 1}, 
+        {eventId: 9, peopleCount: 1}, 
       ],
     },
     {
@@ -253,8 +241,11 @@ const model = {
       phone: "87654321",
       email: "hade@hotmail.com",
       isAdmin: false,
-      program: [{eventId: 1, peopleCount: 3}, 
-                {eventId: 3, peopleCount: 2}],
+      program: [
+        {eventId: 6, peopleCount: 3}, 
+        {eventId: 5, peopleCount: 1},
+        {eventId: 11, peopleCount: 1},
+      ],
     },
     {
       id: 2,
@@ -264,7 +255,10 @@ const model = {
       phone: "25364758",
       email: "Brukernavn.",
       isAdmin: false,
-      program: [{eventId: 1, peopleCount: 3}
+      program: [
+        {eventId: 4, peopleCount: 1},
+        {eventId: 7, peopleCount: 3},
+        {eventId: 6, peopleCount: 3},
       ], 
     }
   ],
