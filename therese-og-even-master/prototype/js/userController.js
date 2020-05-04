@@ -32,11 +32,13 @@ function test() {
 
 
 
-// function userJoinSession(){
-   
-    
+function userJoinSession(){
+  document.getElementById("content").innerHTML = `
+  <div>Her kommer antall deltagere og bekreft</div>
+  `
 
-// }
+}
+
 function findUser(username){
     for (let user of model.users) {
         if (user.email == username ){

@@ -242,7 +242,7 @@ const model = {
       phone: "12345678",
       email: "hei@hotmail.com",
       isAdmin: true,
-      program: [2, 8, 7],
+      program: [2, 8, 7, ],
     },
     {
       id: 1,
