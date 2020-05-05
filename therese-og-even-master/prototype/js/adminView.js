@@ -16,15 +16,26 @@ function adminMainPage() {
 
 
 
-  document.getElementById("content").innerHTML = `
-  <h1>Dagens oversikt</h1>
 
+  document.getElementById("content").innerHTML = `<div>
+  Endre informasjon på brukerens forside: <br>
+ <textarea type="text" id="infoMainPage" >${model.mainPageInfo}</textarea><br>
+      <button onclick="submitFrontPageInfo()">Lagre </button> 
+      </div>
   `
 
     ;
 
   model.logInSession = "Admin";
 }
+
+
+function submitFrontPageInfo(){
+  let textinfo = document.getElementById('infoMainPage').value;
+  model.mainPageInfo = textinfo;
+  
+  
+ }
 
 
 function logOut() {
@@ -80,6 +91,7 @@ function infoChange() {
         `
       )
       .join("")} 
+     
         `;
 }
 

@@ -181,3 +181,11 @@ input {
   p.goBack{
   color: black;
   }
+
+  /* adminside */
+  #infoMainPage{
+    width: 200px;
+    height: 400px;
+   
+    
+  }

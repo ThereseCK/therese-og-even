@@ -47,3 +47,13 @@ model.calender.currentWeek = fullMondayOfCurrentWeek.toString();
   endre informasjon 
   onclik på user
   log in
+
+<input type="text" id="info"> </input>
+  <button onclick="submit()"> </button> 
+
+  function submit(){
+   let textinfo = document.getElementById('info');
+
+   model.mainPageInfo.push(textinfo.value);
+   home();
+  }

@@ -51,7 +51,7 @@ function appointmentsAdmin(timeSlot) {
           ${c.name}<br>
           Påmeldte: ${getNumberOfRegistrations(c.id)} / ${c.maxParticipants}<br>
           <br>
-          <button class="calendarButtonAdmin" >Deltakere</button>   
+          <button class="calendarButtonAdmin">Deltakere</button>   
           <br>
           `).join('')}
           

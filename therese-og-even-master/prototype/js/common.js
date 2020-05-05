@@ -81,8 +81,8 @@ function addButton(){
    </select><br>
    <select>${peoples} </select><br>
    <input type="date"></input><br>
-   <input type="text" value="Navn på event"></input> <br>
-   <input type="text" value="informasjon"></input><br>
+   <input type="text" placeholder="Navn på event"></input> <br>
+   <input type="text" placeholder="informasjon"></input><br>
     <button onclick="addEvent()">Bekreft</button>
    </div>
    `; 

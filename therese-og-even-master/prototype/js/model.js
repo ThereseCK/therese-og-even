@@ -3,7 +3,7 @@ const model = {
     monthStartMonday: null,
     week: null
   },
-  mainPageinfo: 'Her kommer text',
+  mainPageInfo: '',
   selectedModule: "Home",
   logInSession: "Bruker",
   guests: ["Meg", "+1", "+2", "+4", "+5", "+6", "+7", "+8", "+9"],

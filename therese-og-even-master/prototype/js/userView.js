@@ -92,9 +92,11 @@ function home() {
   </div>
   <hr>
   
-  <p id="infoMainPage">${model.mainPageinfo}</p>
+  <p>${model.mainPageInfo}</p>
   `
 }
+
+  
 
 
 
