@@ -46,6 +46,8 @@ function appointmentsAdmin(timeSlot) {
          
           
           ${eventsFromDayAndTime(model.current.week, dayNo, timeSlot).map(c => `
+          
+          
           ${c.name}<br>
           Påmeldte: ${getNumberOfRegistrations(c.id)} / ${c.maxParticipants}<br>
           <br>

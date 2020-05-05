@@ -44,7 +44,7 @@ function switchMonthAdmin(deltaWeek) {
 function dayDateAdmin(timeSlot){
     let timeslotString = timeSlot.innerHTML.toString();
     let dateFromClick = timeslotString.slice(16, 26);
-    
+   
     document.getElementById('content').innerHTML = `
 ${dateFromClick}    
 `; 
@@ -57,9 +57,9 @@ ${dateFromClick}
                 document.getElementById('content').innerHTML += '<br>' + timesFromTimeslotArray + '</br>';
             }
             document.getElementById('content').innerHTML +=` <br>
-           <br>${event.currentParticipants} / ${event.maxParticipants}  <br>
+           <br> ${getNumberOfRegistrations(event.id)} / ${event.maxParticipants}  <br>
            ${event.name} <br>
-            <div><button class="navbarButton" style="width: 100px;" > Påmeldte: </button></div>
+            <div><button class="navbarButton" style="width: 100px;" onclick="viewParticipants()"> Påmeldte </button></div>
             `;
             
             //if(isAdmin == true) legg til mer stæsj i inner'n B)

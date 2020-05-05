@@ -3,9 +3,11 @@ const model = {
     monthStartMonday: null,
     week: null
   },
+  mainPageinfo: 'Her kommer text',
   selectedModule: "Home",
   logInSession: "Bruker",
   guests: ["Meg", "+1", "+2", "+4", "+5", "+6", "+7", "+8", "+9"],
+  maxParticipantsInEvents: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   calender: {
     ukepiltastForward: 0,
     currentWeek: '2020-04-20',  
@@ -72,37 +74,37 @@ const model = {
       info: '', 
       price: null,
       maxParticipants: 1,
-      date: '2020-05-03', 
+      date: null, 
       color: `<p class="ccRed">☯</p>`,
       time: {
         
-        timeSlot: 3,
+        timeSlot: 0,
       }
     },
     { id: 2,
        name: "Event", 
        category: null, 
        info: '', 
-       date: '2020-05-20', 
+       date: null, 
        price: null,
        maxParticipants: null,
        color: `<p class="ccBlue">☯</p>`,
        time: {
         
-        timeSlot: 1,
+        timeSlot: 0,
       }
       },
     { id: 3, 
       name: "Session", 
       category: null, 
       info: '',
-       date: '2020-05-24', 
+       date: null, 
        price: null,
        maxParticipants: null,
        color: `<p class="ccGreen">☯</p>`,
        time: {
         
-        timeSlot: 4,
+        timeSlot: 0,
       }
        },
     {
@@ -116,7 +118,7 @@ const model = {
       color: `<p class="ccRed">☯</p>`,
       time: {
         
-        timeSlot: 1,
+        timeSlot: 4,
       }
     },
     {
@@ -186,15 +188,15 @@ const model = {
     },
     {
       id: 10,
-      name: "Nymåne-toga test",
-      info: "veilednings time",
-      date: '2020-05-23',
-      price: 1500,
-      maxParticipants: 1,
-      category: 3,
-      color: `<p class="ccGreen">☯</p>`,
+      name: "Manneyoga",
+      info: "Test",
+      date: '2020-05-21',
+      price: 2000,
+      maxParticipants: 10,
+      category: 1,
+      color: `<p class="ccRed">☯</p>`,
       time: {
-        timeSlot: 2,
+        timeSlot: 1,
       }
     },
     

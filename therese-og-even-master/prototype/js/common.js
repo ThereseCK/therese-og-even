@@ -65,8 +65,10 @@ ${model.calender.days[i]}<br><br>
    </th> `).join('');
     return html;
 }
+// common Admin ting
 
 function addButton(){
+    let peoples = model.maxParticipantsInEvents.map(p => `<option>${p}</option>`).join('');
     let timeSlot = model.calender.timeSlots.map(n => `<option>${n}</option>`).join(' ');
     let yogaEvents = model.categories.filter(n => n.category === null)
     .map(n => `<option>${n.name}</option>`).join('');
@@ -77,10 +79,13 @@ function addButton(){
    <select> 
    ${timeSlot}
    </select><br>
+   <select>${peoples} </select><br>
    <input type="date"></input><br>
    <input type="text" value="Navn på event"></input> <br>
    <input type="text" value="informasjon"></input><br>
-    <button>Bekreft</button>
+    <button onclick="addEvent()">Bekreft</button>
    </div>
    `; 
 }
+
+

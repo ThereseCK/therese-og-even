@@ -2,7 +2,7 @@ function adminMenu() {
   document.getElementById("navbar").innerHTML = "";
   for (element of model.menuOptions)
     if (element.onlyForAdmin == true) {
-  
+
       document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
           onclick="${element.functionName}()"> ${element.txt}
          </button>`;
@@ -13,15 +13,15 @@ function adminMenu() {
 
 function adminMainPage() {
   adminMenu();
- 
-  
- 
+
+
+
   document.getElementById("content").innerHTML = `
   <h1>Dagens oversikt</h1>
 
   `
-  
- ;
+
+    ;
 
   model.logInSession = "Admin";
 }
@@ -36,7 +36,7 @@ function logOut() {
 }
 
 
-function infoChange(){
+function infoChange() {
   let test = "";
 
   const categoryId = model.selectedCategoryId;
@@ -53,15 +53,17 @@ function infoChange(){
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
       : (test = model.categories[model.selectedCategoryId - 1].info);
-
+      categories.push({
+        id: null,
+        name: `<p onclick="pushNewEvent()">Legg Til</p>`
+      }),
     categories.push({
       id: selectedCategory.category,
       name: `<p class="goBack">⇦</p>`,
       info: ""
-    }),
-    categories.push({ id: null, 
-      name: `<p onclick="pushNewEvent()">Legg Til</p>` });
-    
+    });
+      
+
   }
 
   const courses = model.categories.filter(
@@ -71,37 +73,31 @@ function infoChange(){
     <div> 
      
         ${categories
-          .map(
-            cat => `<div>
+      .map(
+        cat => `<div>
         <button class="infoButton" onclick="selectCategoryAdmin(${cat.id})">${cat.name}</button></div>
          
         `
-          )
-          .join("")} 
-        `;}
-           
-        function selectCategoryAdmin(id) {
-          model.selectedCategoryId = id;
-          
-          infoChange();
-          if(id != null){
-          document.getElementById('content').innerHTML += `
+      )
+      .join("")} 
+        `;
+}
+
+function selectCategoryAdmin(id) {
+  model.selectedCategoryId = id;
+
+  infoChange();
+  if (id != null) {
+    document.getElementById('content').innerHTML += `
           <div>
           <input type="text" value="Endre informasjon"> </input>
-          <br><button>Endre</button>
+          <br><button onclick="changeInfo()">Endre</button>
           </div>`
-        }
-      }
+  }
+}
 
-        // function selectCategoryChange(id) {
-        //     id = null;
-        //     model.selectedCategoryId = id;
-        //     document.getElementById('content').innerHTML = `
-        //     <div>
-        //     <input type="text" value="Endre informasjon"> </input>
-        //     <br><button>Endre</button>
-        //     </div>
-        // `;
-       
-      
-  
+
+
+
+
+

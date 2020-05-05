@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 10px; 
-  border: solid gold 5px;
+  border: solid goldenrod 5px;
 
   /* GRID */
 }
@@ -70,8 +70,8 @@ select{
 }
 .weekdayHeader{
   overflow: hidden;
-  border: 1px solid rgb(159, 185, 159);
-  color: darkslategray;
+  border: 1px solid darkslategray;
+  color : darkslategray;
   font-size: 9px;
   text-align: center;
   vertical-align: middle;
@@ -82,7 +82,7 @@ select{
 
 .addButton {
   border-radius: 50%;
-  background-color: lightskyblue;
+  background-color: #c99393;
   width: 20px;
   height: 20px;
 }
@@ -90,14 +90,14 @@ select{
   
   width: 100px;
   margin: 20px;
-  background-color: rgb(173, 191, 186); 
+  background-color:#c99393; 
   color: darkslategrey;
 }
 .weekCalendarBTN{
   width: 100px;
   margin: 6px;
   margin-bottom: 10px;
-  background-color: rgb(173, 191, 186); 
+  background-color: #c99393;; 
   color: darkslategrey;
 }
 .calendarButton{
@@ -156,7 +156,8 @@ input {
  /* HOMEPAGE */
  
  .navbarButton {
-   background-color: rgba(241, 232, 232, 0.6);
+   background-color: #c99393;
+   
    color: rgb(75,75,75);
    /* background-color: rgb(173, 191, 186);  
    color: darkslategrey; */
@@ -167,10 +168,9 @@ input {
  }
 
   .infoButton {
-    background-color: rgb(173, 191, 186); 
-    color: darkslategrey;
-    text-shadow: grey 1px 1px;
-    box-shadow:  grey 3px 3px 3px ;
+    background-color: #c99393;; 
+    color: rgb(75,75,75);
+    /* box-shadow:  grey 3px 3px 3px ; */
     height: 50px;
     width: 100px;
     margin-bottom: 10px;

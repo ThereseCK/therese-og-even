@@ -42,3 +42,14 @@ function findUser(username){
     }
     return null;
 }
+
+function confirmBooking(){
+    //Her skal det pushes inn informasjon om antall personer, og til hvilken event/catergory 
+    //du melder deg på inn til model.
+}
+
+function submitNewUser() {
+    // her skal det sendes informasjon om ny bruker og legge den til i modell så han/hun også kan logge inn
+    // hvis checkboks er krysset av skal brukerene få ett nyhetsbrev ( link til den) kan muligens legges til i brukeres profil
+    
+  }

@@ -27,17 +27,10 @@ function createUser() {
     <input type="text" value="TelefonNummer"></input> <br>
     <input type="text" value="Nytt passord"></input> <br>
     <input type="text" value="Bekreft Passord"></input> <br>
-    <p>Registrer deg på nyhetsbrev</p> <input type="checkbox"></input> <br>
+    <p>Registrer deg på nyhetsbrev</p> <input type="checkbox" ></input> <br>
     <button onclick="submitNewUser()">Bekreft</button>
     </div>`;
 }
 
-submitNewUser();
-  function submitNewUser() {
-    let mapTest = model.users.map(n => n.id);
-    for(i = 3; i < 20; i++){
-      // console.log(mapTest.push(i))
-      // console.log(mapTest)
-    }
-}
+
 
