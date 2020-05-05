@@ -269,11 +269,12 @@ const model = {
   newUser: {
     id: 0,       // step 1: autoid for hver bruker - sjekk length til allerede registrerte users og pluss på 1 - i pushen til users
     name: "",
-    username: "",
+    adress: "",
     email: "",
     phone: "",
     newPassword: "",
     confirmPassword: "",
+    program: [],
     complete: true,
   }
 };

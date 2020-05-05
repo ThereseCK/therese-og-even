@@ -21,12 +21,12 @@ function showLogOut(){
 function createUser() {
   document.getElementById("content").innerHTML = `
     <div>
-    <input type="text" placeholder="Navn"></input> <br>
-    <input type="text" placeholder="Brukernavn"></input> <br>
-    <input type="text" placeholder="Epost"></input> <br>
-    <input type="text" placeholder="TelefonNummer"></input> <br>
-    <input type="password" placeholder="Nytt passord"></input> <br>
-    <input type="password" placeholder="Bekreft Passord"></input> <br>
+    <input id="registerName" type="text" placeholder="Navn"></input> <br>
+    <input id="registerAdress" type="text" placeholder="Adresse"></input> <br>
+    <input id="registerEmail" type="text" placeholder="Epost"></input> <br>
+    <input id="registerPhone" type="text" placeholder="TelefonNummer"></input> <br>
+    <input id="NewPassword" type="password" placeholder="Nytt passord"></input> <br>
+    <input id="confirmNewPassword" type="password" placeholder="Bekreft Passord"></input> <br>
     <p>Registrer deg på nyhetsbrev</p> <input type="checkbox" ></input> <br>
     <button onclick="submitNewUser()">Bekreft</button>
     </div>`;

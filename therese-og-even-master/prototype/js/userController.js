@@ -49,7 +49,26 @@ function confirmBooking(){
 }
 
 function submitNewUser() {
-    // her skal det sendes informasjon om ny bruker og legge den til i modell så han/hun også kan logge inn
-    // hvis checkboks er krysset av skal brukerene få ett nyhetsbrev ( link til den) kan muligens legges til i brukeres profil
     
+    // hvis checkboks er krysset av skal brukerene få ett nyhetsbrev ( link til den) kan muligens legges til i brukeres profil
+    let nameReg = document.getElementById('registerName').value;
+    let adressReg = document.getElementById('registerAdress').value;
+    let emailReg = document.getElementById('registerEmail').value;
+    let phoneReg = document.getElementById('registerPhone').value;
+    let newPasswordReg = document.getElementById('NewPassword').value;
+    let confirmNewPasswordReg = document.getElementById('confirmNewPassword').value;
+    let newID = model.users.map(n => n.id).join('');
+    
+    
+      model.users.push({
+    adress: `${adressReg}`,
+      email: `${emailReg}`,
+      id: `${newID}`,
+      isAdmin: false,
+      name: `${nameReg}`,
+      password: `${confirmNewPasswordReg}`,
+      phone: `${phoneReg}`,
+      program:[],
+})
+home();
   }
