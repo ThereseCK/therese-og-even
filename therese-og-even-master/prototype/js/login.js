@@ -19,6 +19,7 @@ function showLogOut(){
 }
 
 function createUser() {
+
   document.getElementById("content").innerHTML = `
     <div>
     <input id="registerName" type="text" placeholder="Navn"></input> <br>
@@ -28,8 +29,10 @@ function createUser() {
     <input id="NewPassword" type="password" placeholder="Nytt passord"></input> <br>
     <input id="confirmNewPassword" type="password" placeholder="Bekreft Passord"></input> <br>
     <p>Registrer deg på nyhetsbrev</p> <input type="checkbox" ></input> <br>
-    <button onclick="submitNewUser()">Bekreft</button>
+    <button onclick="submitNewUser()">Bekreft</button></br>
+    <tt style="color:red;">${model.newUser.registerError || ''}</tt>
     </div>`;
+   
 }
 
 

@@ -59,7 +59,7 @@ ${dateFromClick}
             document.getElementById('content').innerHTML +=` <br>
            <br> ${getNumberOfRegistrations(event.id)} / ${event.maxParticipants}  <br>
            ${event.name} <br>
-            <div><button class="navbarButton" style="width: 100px;" onclick="viewParticipants()"> Påmeldte </button></div>
+            <div onclick="viewParticipants(this)"><button class="navbarButton" style="width: 100px;"> Påmeldte </button></div>
             `;
             
             //if(isAdmin == true) legg til mer stæsj i inner'n B)
@@ -70,3 +70,23 @@ ${dateFromClick}
    
 }
 
+function viewParticipants(x,y) {
+    let nameAtParticipants = model.users.map(n =>`<li> ${n.name}</li>`).join('');
+      x.innerHTML = ` 
+      <br> <p>${nameAtParticipants}</p>
+      `
+    }
+
+    function getNumberOfRegistrations(eventId){
+        let count = 0;
+        for(let user of model.users){
+            let registrations = user.program.filter(e=>e.eventId === eventId);
+            if(registrations.length === 1){
+                const registration = registrations[0];
+                count += registration.peopleCount;
+            }
+        }
+        return count;
+    }
+    
+    

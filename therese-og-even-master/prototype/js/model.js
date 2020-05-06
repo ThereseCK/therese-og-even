@@ -223,7 +223,7 @@ const model = {
   },
   users: [   //step 3: løkke med if inni - matcher id'en til denne useren til en av de i current participants? isåfall print ut navn
     {
-      id: 0,   
+      id: "1",   
       name: "Even Vågen",
       password: "passord",
       adress: "Skien",
@@ -237,7 +237,7 @@ const model = {
       ],
     },
     {
-      id: 1,
+      id: "2",
       name: "Therese Nordnes",
       password: "lol",
       adress: "Verningen",
@@ -251,12 +251,12 @@ const model = {
       ],
     },
     {
-      id: 2,
+      id: "3",
       name: "Ola Nordmann",
-      password: "Passord.",
+      password: "j",
       adress: "skogen",
       phone: "25364758",
-      email: "Brukernavn.",
+      email: "j",
       isAdmin: false,
       program: [
         {eventId: 4, peopleCount: 1},
@@ -267,14 +267,15 @@ const model = {
   ],
 
   newUser: {
-    id: 0,       // step 1: autoid for hver bruker - sjekk length til allerede registrerte users og pluss på 1 - i pushen til users
-    name: "",
-    adress: "",
-    email: "",
-    phone: "",
-    newPassword: "",
-    confirmPassword: "",
-    program: [],
+    // id: 0,       // step 1: autoid for hver bruker - sjekk length til allerede registrerte users og pluss på 1 - i pushen til users
+    // name: "",
+    // adress: "",
+    // email: "",
+    // phone: "",
+    // newPassword: "",
+    // confirmPassword: "",
+    // program: [],
+    registerError: null,
     complete: true,
   }
 };

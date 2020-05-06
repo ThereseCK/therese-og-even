@@ -50,25 +50,38 @@ function confirmBooking(){
 
 function submitNewUser() {
     
-    // hvis checkboks er krysset av skal brukerene få ett nyhetsbrev ( link til den) kan muligens legges til i brukeres profil
+    // hvis checkboks er krysset av skal brukerene få ett nyhetsbrev ( link til den) kan muligens legges til i brukeres profil <- slu plan!
     let nameReg = document.getElementById('registerName').value;
     let adressReg = document.getElementById('registerAdress').value;
     let emailReg = document.getElementById('registerEmail').value;
     let phoneReg = document.getElementById('registerPhone').value;
     let newPasswordReg = document.getElementById('NewPassword').value;
     let confirmNewPasswordReg = document.getElementById('confirmNewPassword').value;
-    let newID = model.users.map(n => n.id).join('');
-    
-    
+    let testID= model.users.length + 1; 
+  
+ 
+  console.log( typeof(nameReg.value));
+    if(newPasswordReg === confirmNewPasswordReg && nameReg
+     && adressReg
+     && emailReg
+     && phoneReg
+    ){
       model.users.push({
     adress: `${adressReg}`,
       email: `${emailReg}`,
-      id: `${newID}`,
+      id: `${testID}`,
       isAdmin: false,
       name: `${nameReg}`,
       password: `${confirmNewPasswordReg}`,
       phone: `${phoneReg}`,
       program:[],
 })
+
 home();
-  }
+}
+else{ 
+    model.newUser.registerError = 'mangelfull utfylling'; 
+    createUser();
+    model.newUser.registerError = '';
+      }
+}

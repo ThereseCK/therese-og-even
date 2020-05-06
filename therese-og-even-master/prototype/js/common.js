@@ -88,4 +88,17 @@ function addButton(){
    `; 
 }
 
+function getNumberOfRegistrations(eventId){
+    let count = 0;
+    for(let user of model.users){
+        let registrations = user.program.filter(e=>e.eventId === eventId);
+        if(registrations.length === 1){
+            const registration = registrations[0];
+            count += registration.peopleCount;
+        }
+    }
+    return count;
+}
+
+
 

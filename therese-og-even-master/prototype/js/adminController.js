@@ -2,9 +2,9 @@ function addEvent(){
 //Her pusher admin inn events til kalender. 
 }
 
-function viewParticipants() {
-    //Oversikt over deltakere til eventet knyttet til dato og tid.
-  }
+
+  
+  
   
   
   function pushNewEvent(){

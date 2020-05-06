@@ -50,8 +50,9 @@ function appointmentsAdmin(timeSlot) {
           
           ${c.name}<br>
           Påmeldte: ${getNumberOfRegistrations(c.id)} / ${c.maxParticipants}<br>
-          <br>
-          <button class="calendarButtonAdmin">Deltakere</button>   
+          <br><div onclick="viewParticipants(this)">
+          <button class="calendarButtonAdmin">Påmeldte</button>  
+          </div> 
           <br>
           `).join('')}
           
@@ -73,18 +74,7 @@ function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
 }
 
 
-  function getNumberOfRegistrations(eventId){
-    let count = 0;
-    for(let user of model.users){
-        let registrations = user.program.filter(e=>e.eventId === eventId);
-        if(registrations.length === 1){
-            const registration = registrations[0];
-            count += registration.peopleCount;
-        }
-    }
-    return count;
-}
-
+ 
 
 
 
