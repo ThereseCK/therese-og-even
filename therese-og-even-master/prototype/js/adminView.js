@@ -102,7 +102,7 @@ function selectCategoryAdmin(id) {
   if (id != null) {
     document.getElementById('content').innerHTML += `
           <div>
-          <input type="text" value="Endre informasjon"> </input>
+          <textarea type="text" value="Endre informasjon"> </textarea>
           <br><button onclick="changeInfo()">Endre</button>
           </div>`
   }

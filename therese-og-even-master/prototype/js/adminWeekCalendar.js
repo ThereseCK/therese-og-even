@@ -20,6 +20,7 @@ ${createWeekCalendarHtml(mondayWeekStart)}
 
 </tr>
 <tr>
+${appointmentsAdmin(0)}
 ${appointmentsAdmin(1)}
 ${appointmentsAdmin(2)}
 ${appointmentsAdmin(3)}
@@ -69,7 +70,7 @@ function eventsFromDayAndTime(baseDateTxt, dayCount, timeSlot) {
     .substr(0, 10);
   return model.categories.filter(
     (categories) =>
-      categories.date === date && categories.time.timeSlot === timeSlot
+      categories.date == date && categories.time.timeSlot == timeSlot
   );
 }
 

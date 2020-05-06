@@ -3,7 +3,7 @@ const model = {
     monthStartMonday: null,
     week: null
   },
-  mainPageInfo: '',
+  mainPageInfo: 'tekstinformasjon du selv ønsker',
   selectedModule: "Home",
   logInSession: "Bruker",
   guests: ["Meg", "+1", "+2", "+4", "+5", "+6", "+7", "+8", "+9"],
@@ -170,7 +170,7 @@ const model = {
       category: 2,
       color: `<p  class="ccBlue">☯</p>`,
       time: {
-        timeSlot: 2,
+        timeSlot: 0,
       }
     },
     {
@@ -205,7 +205,7 @@ const model = {
       name: "Yoga",
       info: "Fjernes bare test",
       date: '2020-05-05',
-      price: 1500,
+      price: "1500",
       maxParticipants: 1,// step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
       category: 3,
       color: `<p class="ccGreen">☯</p>`,

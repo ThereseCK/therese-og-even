@@ -73,16 +73,17 @@ function addButton(){
     let yogaEvents = model.categories.filter(n => n.category === null)
     .map(n => `<option>${n.name}</option>`).join('');
    document.getElementById('content').innerHTML = `<div>
-   <select> 
+   <select id="eventType"> 
    ${yogaEvents}
    </select><br>
-   <select> 
+   <select id="timeSlot"> 
    ${timeSlot}
    </select><br>
-   <select>${peoples} </select><br>
-   <input type="date"></input><br>
-   <input type="text" placeholder="Navn på event"></input> <br>
-   <input type="text" placeholder="informasjon"></input><br>
+   <select id="maxPeople">${peoples} </select><br>
+   <input type="date" id="dateEvent"></input><br>
+   <input type="text" id="eventName" placeholder="Navn på event"></input> <br>
+   <input type="text" id="eventPrice" placeholder="Pris"></input> <br>
+   <textarea type="text" id="eventInfo" placeholder="informasjon"></textarea><br>
     <button onclick="addEvent()">Bekreft</button>
    </div>
    `; 
