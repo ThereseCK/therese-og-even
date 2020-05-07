@@ -82,7 +82,7 @@ select{
 
 .addButton {
   border-radius: 50%;
-  background-color: #c99393;
+  background-color: #adbfba;
   width: 20px;
   height: 20px;
 }
@@ -90,14 +90,14 @@ select{
   
   width: 100px;
   margin: 20px;
-  background-color:#c99393; 
+  background-color:#adbfba; 
   color: darkslategrey;
 }
 .weekCalendarBTN{
   width: 100px;
   margin: 6px;
   margin-bottom: 10px;
-  background-color: #c99393;; 
+  background-color: #adbfba; 
   color: darkslategrey;
 }
 .calendarButton{
@@ -156,7 +156,7 @@ input {
  /* HOMEPAGE */
  
  .navbarButton {
-   background-color: #c99393;
+   background-color: #adbfba;
    
    color: rgb(75,75,75);
    /* background-color: rgb(173, 191, 186);  
@@ -168,7 +168,7 @@ input {
  }
 
   .infoButton {
-    background-color: #c99393;; 
+    background-color: #adbfba; 
     color: rgb(75,75,75);
     /* box-shadow:  grey 3px 3px 3px ; */
     height: 50px;
