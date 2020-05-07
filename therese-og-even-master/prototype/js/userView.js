@@ -13,9 +13,7 @@ function showInfo() {
     cat => cat.id === categoryId
   )[0];
   if (selectedCategory) {
-    // const catName = categories.map(b => b.name).join(" ");
-    // const info = categories.map(n => n.info).join(" ");
-
+  
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
       : (test = model.categories[model.selectedCategoryId - 1].info);
@@ -35,7 +33,7 @@ function showInfo() {
 
 
   const courses = model.categories.filter(
-    cat => cat.category === categoryId
+    cat => cat.category == categoryId
   );
   document.getElementById("content").innerHTML = `
     <div> 
@@ -67,9 +65,6 @@ function selectCategory(id) {
 }
 
 function initMenu() {
-  // let edittext = model.menuOptions.map(n => n.loggedInn);
-  // let edittext2 = model.menuOptions.map(n => n.txt);
-  // let loggedInOrNot = edittext == true ? 'Logg Ut' : "Logg Inn" ;
   document.getElementById("navbar").innerHTML = "";
 
 
@@ -80,14 +75,14 @@ function initMenu() {
                              onclick="${element.functionName}()"> ${element.txt}
                              
                             </button>`;
-      //vise log in om ikkelogget inn vise logg ut om logget in
+  
     }
   }
 }
 
 function home() {
   document.getElementById("content").innerHTML = `
-  <h3 >Om </h3>
+  
   <div>
   <img src="hol2.jpg"  height="200" width="300" style="border-radius: 10%; box-shadow: grey 5px 5px 2px;"/>
   </div>
@@ -97,12 +92,6 @@ function home() {
   `
 }
 
-  
-
-
-
-
-
 function showContactinfo() {
   document.getElementById('footer').innerHTML = `
   <hr>
@@ -110,8 +99,6 @@ function showContactinfo() {
   <b> Adresse: </b>${model.contactInfo.adress}<br>
   <b> Telefon: </b>${model.contactInfo.phone}<br>
  <b> e-post: </b> ${model.contactInfo.email}
-
-
   `;
 }
 
@@ -119,9 +106,7 @@ function userProfil() {
 
   let loggedInUsersObj = findUser(model.login.loggedInUser);
   let categories = loggedInUsersObj.program.map(n => n.eventId);
-  // let people = loggedInUsersObj.program.filter(n => n.peopleCount === participants);
-
-
+  
   let html = `<div><b>Du er logget inn som: </b><br> ${model.login.loggedInUser}<br><hr>
   </div>`;
 

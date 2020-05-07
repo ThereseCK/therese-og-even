@@ -26,12 +26,6 @@ function userCalendar() {
 
 
 
-// function getMondayOfFirstWeekOfMonth(date) {
-//     while (date.getDate() >= 7) {
-//         date = addDays(date, -7);
-//     }
-//     return date;
-// }
 
 function createWeekHtml(monday) {
     
@@ -40,7 +34,7 @@ function createWeekHtml(monday) {
 }
 
 function dayDate(timeSlot) { 
-    //det er her lista over dagens events   - sende med påklikket dag, bruke den til å loope i modellen
+
     let timeslotString = timeSlot.innerHTML.toString();
     let dateFromClick = timeslotString.slice(16, 26);
     let disabledOrNot = model.login.loggedInUser == null ? 'disabled' : "" ;
@@ -64,19 +58,11 @@ function dayDate(timeSlot) {
             <div onclick="userJoinSession(this)"><button class="navbarButton" style="width: 100px;" > Meld på </button> </div> 
             
             `;
-            
-            //if(isAdmin == true) legg til mer stæsj i inner'n B
            
         }
     }
    
 }
-
-// `  
-//             ${model.categories.filter(l => l.date === '2020-05-24').
-//             map(n => `<ul>${n.time.timeSlot} <br>${n.name}<br><button class="infoButton"> Meld på </button> </ul>`).join(' ')
-//         }           
-//     `;
 
 function getMondayOfCurrentWeek() {
     var today = new Date();
@@ -84,8 +70,6 @@ function getMondayOfCurrentWeek() {
     var monday = addDays(today, diffToMonday);
     return monday;
 }
-
-
 
 function switchMonth(x) {
     model.current.monthStartMonday = addDays(model.current.monthStartMonday, x * 28);

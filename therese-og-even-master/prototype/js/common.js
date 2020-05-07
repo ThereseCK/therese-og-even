@@ -1,8 +1,4 @@
-// function range(from, to) {
-    //     return Array.from(Array(to - from).keys()).map(n => n + from);
-    // }
-    
-    //variabler:
+
     let todaysDate = new Date();
         let onejan = new Date(todaysDate.getFullYear(), 0, 1);
         let week = Math.ceil( (((todaysDate - onejan) / 86400000) + onejan.getDay() + 1) / 7 )
@@ -11,7 +7,7 @@
 const range = (from, to) => Array.from(Array(to - from).keys()).map(n => n + from);
 
 function addDays(date, dayCount) {
-    //console.log(date, " hva er date? null?")
+    
     return new Date(date.getTime() + (dayCount * 24 * 60 * 60 * 1000));
 }
 
@@ -65,7 +61,7 @@ ${model.calender.days[i]}<br><br>
    </th> `).join('');
     return html;
 }
-// common Admin ting
+
 
 function addButton(){
     let peoples = model.maxParticipantsInEvents.map(p => `<option>${p}</option>`).join('');

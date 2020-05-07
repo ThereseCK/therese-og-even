@@ -75,7 +75,7 @@ const model = {
       info: '', 
       price: null,
       maxParticipants: 1,
-      date: null, 
+      date: '', 
       color: `<p class="ccRed">☯</p>`,
       time: {
         
@@ -86,7 +86,7 @@ const model = {
        name: "Event", 
        category: null, 
        info: '', 
-       date: null, 
+       date: '', 
        price: null,
        maxParticipants: null,
        color: `<p class="ccBlue">☯</p>`,
@@ -99,7 +99,7 @@ const model = {
       name: "Session", 
       category: null, 
       info: '',
-       date: null, 
+       date: '', 
        price: null,
        maxParticipants: null,
        color: `<p class="ccGreen">☯</p>`,
@@ -207,7 +207,7 @@ const model = {
       info: "Fjernes bare test",
       date: '2020-05-05',
       price: "1500",
-      maxParticipants: 1,// step 2: pushe id'ene til den som er logga inn inn her hvor den melder seg på - ha et eget number of Parti. 
+      maxParticipants: 1,
       category: 3,
       color: `<p class="ccGreen">☯</p>`,
       time: {
@@ -222,12 +222,12 @@ const model = {
     error: null,
     isAdmin: false
   },
-  users: [   //step 3: løkke med if inni - matcher id'en til denne useren til en av de i current participants? isåfall print ut navn
+  users: [   
     {
       id: "1",   
-      name: "Even Vågen",
+      name: "Joe",
       password: "passord",
-      adress: "Skien",
+      adress: "USA",
       phone: "12345678",
       email: "hei@hotmail.com",
       isAdmin: true,
@@ -239,9 +239,9 @@ const model = {
     },
     {
       id: "2",
-      name: "Therese Nordnes",
+      name: "Kari",
       password: "lol",
-      adress: "Verningen",
+      adress: "Norge",
       phone: "87654321",
       email: "hade@hotmail.com",
       isAdmin: false,
@@ -268,7 +268,7 @@ const model = {
   ],
 
   newUser: {
-    // id: 0,       // step 1: autoid for hver bruker - sjekk length til allerede registrerte users og pluss på 1 - i pushen til users
+    // id: 0,      
     // name: "",
     // adress: "",
     // email: "",

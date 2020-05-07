@@ -62,7 +62,7 @@ ${dateFromClick}
             <div onclick="viewParticipants(this)"><button class="navbarButton" style="width: 100px;"> Påmeldte </button></div>
             `;
             
-            //if(isAdmin == true) legg til mer stæsj i inner'n B)
+            
            
            
         }

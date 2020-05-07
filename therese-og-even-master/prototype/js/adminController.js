@@ -1,5 +1,5 @@
 function addEvent(){
-//Her pusher admin inn events til kalender. 
+
 let selectType = document.getElementById('eventType').value;
 let timeSlotSelect = document.getElementById('timeSlot').value;
 let maxParticipantsSelect = document.getElementById('maxPeople').value;
@@ -8,7 +8,7 @@ let nameOnEvent = document.getElementById('eventName').value;
 let priceOnEvent = document.getElementById('eventPrice').value;
 let informationEvent = document.getElementById('eventInfo').value;
 let eventID = model.categories.length + 1; 
-let colorSelect =  model.categories.color;// Bytte farge i forhold til category
+let colorSelect =  model.categories.color;
 if(selectType === 'Yoga'){
   selectType = 1 
   colorSelect = `<p  class="ccRed">☯</p>`;
@@ -36,7 +36,7 @@ if(timeSlotSelect === "14.00-16.00"){
 if(timeSlotSelect === "16.00-18.00"){
   timeSlotSelect = 4
 }
-console.log(colorSelect, 'hva er det?')
+
 
 model.categories.push({
     id: `${eventID}`,

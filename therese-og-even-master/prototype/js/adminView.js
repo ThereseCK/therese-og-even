@@ -59,8 +59,6 @@ function infoChange() {
     cat => cat.id === categoryId
   )[0];
   if (selectedCategory) {
-    // const catName = categories.map(b => b.name).join(" ");
-    // const info = categories.map(n => n.info).join(" ");
 
     model.categories[model.selectedCategoryId - 1].info == null
       ? (test = "")
