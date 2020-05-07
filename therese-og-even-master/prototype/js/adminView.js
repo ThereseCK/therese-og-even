@@ -42,6 +42,7 @@ function logOut() {
   document.getElementById("navbar").innerHTML = "";
   document.getElementById("content").innerHTML = "";
   model.logInSession = "Bruker";
+  model.login.loggedInUser = null;
   home();
   initMenu();
 }

@@ -16,6 +16,7 @@ function profil() {
         model.login.error = 'Feil brukernavn og/eller passord.';
     }
     test();
+    initMenu();
 
 
 }

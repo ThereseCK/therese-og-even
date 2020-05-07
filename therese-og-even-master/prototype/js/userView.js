@@ -74,6 +74,7 @@ function initMenu() {
 
 
   for (element of model.menuOptions) {
+    if(element.isActive && element.isActive() === false) continue;
     if (model.logInSession == "Bruker" && element.onlyForAdmin == false) {
       document.getElementById("navbar").innerHTML += ` <button class="navbarButton"
                              onclick="${element.functionName}()"> ${element.txt}

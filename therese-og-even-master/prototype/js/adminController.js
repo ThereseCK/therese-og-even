@@ -10,13 +10,16 @@ let informationEvent = document.getElementById('eventInfo').value;
 let eventID = model.categories.length + 1; 
 let colorSelect =  model.categories.color;// Bytte farge i forhold til category
 if(selectType === 'Yoga'){
-  selectType = 1 && colorSelect == `<p  class="ccRed">☯</p>`
+  selectType = 1 
+  colorSelect = `<p  class="ccRed">☯</p>`;
 }
 if(selectType === 'Event'){
-  selectType =  2 && colorSelect == `<p  class="ccBlue">☯</p>`
+  selectType =  2; 
+  colorSelect = `<p  class="ccBlue">☯</p>`;
 }
 if(selectType === 'Session'){
-  selectType = 3 && colorSelect == `<p  class="ccGreen">☯</p>`
+  selectType = 3;
+  colorSelect = `<p  class="ccGreen">☯</p>`;
 }
 if(timeSlotSelect === "08.00-10.00"){
   timeSlotSelect = 0
