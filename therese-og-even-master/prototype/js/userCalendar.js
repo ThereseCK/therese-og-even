@@ -55,7 +55,7 @@ function dayDate(timeSlot) {
             }
             document.getElementById('content').innerHTML +=` <br>
             ${event.name}<br>
-            <div onclick="userJoinSession(this)"><button class="navbarButton" style="width: 100px;" > Meld på </button> </div> 
+            <div onclick="userJoinSession(this)"><button class="navbarButton" style="width: 100px;" ${disabledOrNot}> Meld på </button> </div> 
             
             `;
            
