@@ -3,9 +3,9 @@ function showLogIn() {
     let loginHTML = `<div>
       <input type="text" oninput="model.login.usernameEntry=this.value" placeholder="Brukernavn"> </input> <br>
       <input type="password" oninput="model.login.passwordEntry=this.value" placeholder="Passord"> </input> <br>
-      <button onclick="profil()"> Logg Inn</button> <br>
-      <span style="color: red">${model.login.error || ''}</span><br>
-      <button onclick="adminMainPage()">Admin</button>
+      <button onclick="profil()"> Logg Inn</button>
+      <button onclick="adminMainPage()">♛</button><br>
+      <span style="color: red">${model.login.error || ''}</span> <br>
       <button onclick="createUser()">Registrer bruker</button>
       </div>
       `;
