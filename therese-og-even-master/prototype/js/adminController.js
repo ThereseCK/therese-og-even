@@ -8,7 +8,7 @@ let nameOnEvent = document.getElementById('eventName').value;
 let priceOnEvent = document.getElementById('eventPrice').value;
 let informationEvent = document.getElementById('eventInfo').value;
 let eventID = model.categories.length + 1; 
-let colorSelect =  model.categories.color;
+let colorSelect =  model.categories.color;// Bytte farge i forhold til category
 if(selectType === 'Yoga'){
   selectType = 1 && colorSelect == `<p  class="ccRed">☯</p>`
 }

@@ -27,6 +27,7 @@ function test() {
 
     else {
         userProfil();
+        //Logg ut
     }
 }
 
