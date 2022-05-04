@@ -64,8 +64,8 @@ const model = {
   contactInfo: {
     name: "Helle",
     adress: "Larvik",
-    phone: "90050098",
-    email: "helle@holistica.no"
+    phone: "91234567",
+    email: "info@holistica.no"
   },
   selectedCategoryId: null,
   categories: [
